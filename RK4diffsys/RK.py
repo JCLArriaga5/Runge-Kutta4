@@ -33,5 +33,3 @@ class RK(object):
 
             ti += h
         return ui, vi
-
-
