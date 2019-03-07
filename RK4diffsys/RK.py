@@ -19,7 +19,7 @@ class RK(object):
             m1 = self.g(vi, ui, ti)
 
             K2 = self.f(vi + m1 * h / 2)
-            m2 = self.g(vi + m1 * h / 2, ui + K1 * h/ 2, ti + h / 2)
+            m2 = self.g(vi + m1 * h / 2, ui + K1 * h / 2, ti + h / 2)
 
             K3 = self.f(vi + m2 * h / 2)
             m3 = self.g(vi + m2 * h / 2, ui + K2 * h / 2, ti * h / 2)
@@ -29,5 +29,9 @@ class RK(object):
 
             ui += (h / 6) * (K1 + 2 * K2 + 2 * K3 + K4)
 
-            
+            vi += (h / 6) * (m1 + 2 * m2 + 2 * m3 + m4)
+
+            ti += h
+        return ui, vi
+
 
