@@ -28,8 +28,20 @@ class RK(object):
             m4 = self.g(vi + m3 * h, ui + K3 * h, ti + h)
 
             ui += (h / 6) * (K1 + 2 * K2 + 2 * K3 + K4)
+            self.us.append(ui)
 
             vi += (h / 6) * (m1 + 2 * m2 + 2 * m3 + m4)
+            self.vs.append(vi)
 
             ti += h
+            self.ts.append(ti)
         return ui, vi
+
+    def graph(self, *args, **kwargs):
+        plt.title("Graph of functions")
+        plt.plot(self.ts, self.us, *args, **kwargs)
+        plt.plot(self.ts, self.vs, *args, **kwargs)
+        plt.legend()
+        plt.grid()
+        plt.xlabel("$ t $")
+        plt.ylabel("$ u:v $")
