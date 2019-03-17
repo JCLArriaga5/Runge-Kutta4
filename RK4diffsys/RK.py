@@ -22,7 +22,7 @@ class RK(object):
             m2 = self.g(vi + m1 * h / 2, ui + K1 * h / 2, ti + h / 2)
 
             K3 = self.f(vi + m2 * h / 2)
-            m3 = self.g(vi + m2 * h / 2, ui + K2 * h / 2, ti * h / 2)
+            m3 = self.g(vi + m2 * h / 2, ui + K2 * h / 2, ti + h / 2)
 
             K4 = self.f(vi + m3 * h)
             m4 = self.g(vi + m3 * h, ui + K3 * h, ti + h)
