@@ -1,6 +1,4 @@
 from __future__ import division
-from tkinter import *
-from tkinter import ttk
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -71,6 +69,7 @@ class RK4(object):
         plt.grid()
         plt.xlabel("$ t $")
         plt.ylabel("$ y(t) $")
+        plt.show()
 
     def table(self):
         """
@@ -96,9 +95,12 @@ class RK4(object):
         plt.title("Value table")
         plt.show()
 
+
 if __name__ == "__main__":
     def f(t, y):
-        return 2*t - 3*y + 1
+        return 2 * t - 3 * y + 1
+
+
     y = RK4(f)
 
     t_i = 1
@@ -106,5 +108,5 @@ if __name__ == "__main__":
     end = 1.5
     sh = 0.1
     r = y.solve(t_i, y_i, end, sh)
-    print(r)
-    y.graph('r--', label = "Function y")
+    print("dy/dt =", r)
+    y.graph('r--', label="Function y")
