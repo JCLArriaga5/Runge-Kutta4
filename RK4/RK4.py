@@ -101,12 +101,12 @@ if __name__ == "__main__":
         return 2 * t - 3 * y + 1
 
 
-    y = RK4(f)
+    rk = RK4(f)
 
     t_i = 1
     y_i = 5
     end = 1.5
     sh = 0.1
-    r = y.solve(t_i, y_i, end, sh)
+    r = rk.solve(t_i, y_i, end, sh)
     print("dy/dt =", r)
-    y.graph('r--', label="Function y")
+    rk.graph('r--', label="Function y")
