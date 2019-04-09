@@ -1,6 +1,8 @@
 from __future__ import division
-import numpy as np
+from tkinter import *
+from tkinter import ttk
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 class RK4(object):
@@ -19,7 +21,7 @@ class RK4(object):
         h = 0.1
         y.solve(ti, yi, done, h)
         ► To obtain the graph
-        y.graph('r--', label = "Function y"
+        y.graph('r--', label = "Function y")
         ► To get the table of values
         y.table(lw = 2)
     """
@@ -93,3 +95,16 @@ class RK4(object):
         ax.yaxis.set_visible(False)
         plt.title("Value table")
         plt.show()
+
+if __name__ == "__main__":
+    def f(t, y):
+        return 2*t - 3*y + 1
+    y = RK4(f)
+
+    t_i = 1
+    y_i = 5
+    end = 1.5
+    sh = 0.1
+    r = y.solve(t_i, y_i, end, sh)
+    print(r)
+    y.graph('r--', label = "Function y")
