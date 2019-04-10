@@ -4,12 +4,12 @@ import numpy as np
 
 
 class RK4(object):
-    """"
-    Implementation of the method of Runge Kutta of fourth order, to obtain the value of a differential equation given
+    """
+    Implementation of the method fourth order Runge Kutta, to obtain the value of a differential equation given
     its initial conditions, obtain its graph and its table of values.
     The function receives equations of the form dy / dt = f(t,y)
     Example:
-        def(t, y):
+        def f(t, y):
             return 2*t -3*y + 1
         y = RK4(f)
         ► To get the solution given the initial conditions
