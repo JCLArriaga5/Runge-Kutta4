@@ -43,6 +43,7 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/RK4/RK4.py" />
         <option value="$PROJECT_DIR$/RK4diffsys/RK.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -63,16 +64,6 @@
             <path>
               <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
               <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
-              <item name="RK4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
-              <item name="RK4diffsys" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -167,12 +158,12 @@
       <workItem from="1551923337582" duration="7170000" />
       <workItem from="1551933169510" duration="815000" />
       <workItem from="1552354358250" duration="1483000" />
-      <workItem from="1554848626747" duration="6495000" />
+      <workItem from="1554848626747" duration="7681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15963000" />
+    <option name="totallyTimeSpent" value="17149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -182,7 +173,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32872504" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -235,16 +226,6 @@
     <entry file="file://$USER_HOME$/Actividad 4 Robótica.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/RK4diffsys/RK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RK4/RK4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -257,6 +238,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Install.sh">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RK4diffsys/RK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.groovy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="85">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
