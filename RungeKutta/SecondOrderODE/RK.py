@@ -16,6 +16,9 @@ class RK(object):
         dv/dx = g(v, u, t)
 
         Example:
+            from RungeKutta.SecondOrderODE.RK import *
+            from math import e
+
             def f(v):
                 return v
 
@@ -29,7 +32,9 @@ class RK(object):
             ti = 0
             h = 0.1
             done = 1.5
-            rk.solve(ti, ui, vi, done, h)
+            r = rk.solve(ti, ui, vi, done, h)
+            print("u =", r[0])
+            print("v =", r[1])
             ► To obtain the graph
             rk.graph()
         """

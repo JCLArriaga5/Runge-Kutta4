@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RungeKutta/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/RungeKutta test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RK4/RK4.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RK4/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RK4diffsys/RK.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RK4diffsys/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,13 +27,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/RungeKutta test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="-363">
+              <caret line="1" column="1" lean-forward="true" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,11 +85,11 @@
         <option value="$PROJECT_DIR$/RungeKutta/RK4/__init__.py" />
         <option value="$PROJECT_DIR$/RungeKutta/__init__.py" />
         <option value="$PROJECT_DIR$/RungeKutta/RK4/RK4.py" />
-        <option value="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" />
         <option value="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK4.py" />
         <option value="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" />
-        <option value="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" />
         <option value="$PROJECT_DIR$/examples/RungeKutta test.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" />
       </list>
     </option>
   </component>
@@ -96,6 +110,11 @@
             <path>
               <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
               <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
@@ -260,18 +279,18 @@
       <workItem from="1551933169510" duration="815000" />
       <workItem from="1552354358250" duration="1483000" />
       <workItem from="1554848626747" duration="7681000" />
-      <workItem from="1555026601899" duration="5947000" />
+      <workItem from="1555026601899" duration="6835000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23096000" />
+    <option name="totallyTimeSpent" value="23984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -338,16 +357,6 @@
     <entry file="file://$PROJECT_DIR$/RungeKutta/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="110" column="4" lean-forward="true" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -358,10 +367,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py">
+    <entry file="file://$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -370,10 +379,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/RungeKutta test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="-363">
+          <caret line="1" column="1" lean-forward="true" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

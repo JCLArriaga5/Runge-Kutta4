@@ -9,15 +9,18 @@ class RK4(object):
     its initial conditions, obtain its graph and its table of values.
     The function receives equations of the form dy / dt = f(t,y)
     Example:
+        from RungeKutta.FirstOrderODE.RK4 import *
+
         def f(t, y):
             return 2*t -3*y + 1
-        y = FirstOrderODE(f)
+        y = RK4(f)
         ► To get the solution given the initial conditions
         ti = 1
         yi = 5
         done = 1.5
         h = 0.1
-        y.solve(ti, yi, done, h)
+        r = y.solve(ti, yi, done, h)
+        print("dy/dt =", r)
         ► To obtain the graph
         y.graph('r--', label = "Function y")
         ► To get the table of values
