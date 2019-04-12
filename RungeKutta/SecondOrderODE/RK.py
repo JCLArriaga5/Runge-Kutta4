@@ -53,6 +53,7 @@ class RK(object):
 
     def solve(self, ti, ui, vi, done, h):
         """
+        Initialize the ODE solution given the initial values
         :param ti: Value of the initial t
         :param ui: Value of the initial y
         :param vi: Value of the initial y'

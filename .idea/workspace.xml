@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="-314">
+              <caret line="55" column="60" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="60" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -279,12 +278,12 @@
       <workItem from="1551933169510" duration="815000" />
       <workItem from="1552354358250" duration="1483000" />
       <workItem from="1554848626747" duration="7681000" />
-      <workItem from="1555026601899" duration="6835000" />
+      <workItem from="1555026601899" duration="7018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23984000" />
+    <option name="totallyTimeSpent" value="24167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -386,8 +385,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="-314">
+          <caret line="55" column="60" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="60" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
