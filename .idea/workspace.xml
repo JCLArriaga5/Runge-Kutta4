@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="" />
+    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RungeKutta/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/RungeKutta test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RK4/RK4.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RK4/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RK4diffsys/RK.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RK4diffsys/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +33,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/examples/RungeKutta test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,6 +67,15 @@
         <option value="$PROJECT_DIR$/RK4/RK4.py" />
         <option value="$PROJECT_DIR$/RK4diffsys/RK.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/RungeKutta test.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/RK4/__init__.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/__init__.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/RK4/RK4.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK4.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" />
+        <option value="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" />
+        <option value="$PROJECT_DIR$/examples/RungeKutta test.py" />
       </list>
     </option>
   </component>
@@ -65,6 +97,23 @@
               <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
               <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+              <item name="FirstOrderODE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
+              <item name="SecondOrderODE" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -74,13 +123,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Actividad 4 Robótica.ipynb" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Runge Kutta GUI/RungeKutta prueba.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\RungeKutta" />
+      <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\examples" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -94,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RK">
+  <component name="RunManager" selected="Python.RungeKutta test">
     <configuration name="RK" type="PythonConfigurationType" factoryName="Python">
       <module name="RungeKutta" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,6 +164,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RK4diffsys/RK.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RK4 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RungeKutta" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RungeKutta/RK4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Lucila\Documents\GitHub\RungeKutta\RungeKutta\RK4\RK.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -139,8 +216,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="RungeKutta test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RungeKutta" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/RungeKutta test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.RungeKutta test" />
+        <item itemvalue="Python.RK4 (1)" />
         <item itemvalue="Python.RK4" />
       </list>
     </recent_temporary>
@@ -159,21 +260,23 @@
       <workItem from="1551933169510" duration="815000" />
       <workItem from="1552354358250" duration="1483000" />
       <workItem from="1554848626747" duration="7681000" />
+      <workItem from="1555026601899" duration="5947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17149000" />
+    <option name="totallyTimeSpent" value="23096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1633888" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32872504" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -184,14 +287,15 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Google Cloud Storage" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32980332" />
-      <window_info anchor="right" id="R Graphics" order="4" weight="0.32980332" />
-      <window_info anchor="right" id="R Packages" order="5" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
+      <window_info anchor="right" id="Key Promoter X" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.32980332" />
+      <window_info anchor="right" id="R Graphics" order="5" weight="0.32980332" />
+      <window_info anchor="right" id="R Packages" order="6" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32980332" />
+      <window_info anchor="right" id="Google Cloud Storage" order="8" show_stripe_button="false" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,23 +303,11 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RungeKutta$RK4.coverage" NAME="RK4 Coverage Results" MODIFIED="1554854783318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RK4" />
+    <SUITE FILE_PATH="coverage/RungeKutta$RungeKutta_test.coverage" NAME="RungeKutta test Coverage Results" MODIFIED="1555032555545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/RungeKutta$RK4__1_.coverage" NAME="RK4 (1) Coverage Results" MODIFIED="1555031139409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RungeKutta/RK4" />
     <SUITE FILE_PATH="coverage/RungeKutta$RK.coverage" NAME="RK Coverage Results" MODIFIED="1554854769738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RK4diffsys" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RK4diffsys/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RK4/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -226,29 +318,7 @@
     <entry file="file://$USER_HOME$/Actividad 4 Robótica.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/RK4/RK4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="60" column="68" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Install.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RK4diffsys/RK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Install.sh" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.groovy">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -259,6 +329,52 @@
             <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Runge Kutta GUI/RungeKutta prueba.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RungeKutta/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="110" column="4" lean-forward="true" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RungeKutta/SecondOrderODE/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/RungeKutta test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

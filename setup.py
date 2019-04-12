@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='RungeKutta',
     version='1.0',
-    packages=['RK4, RK4diffsys'],
+    packages=['FirstOrderODE, SecondOrderODE'],
     url='https://github.com/CarlosLopezNubes5/RungeKutta',
     license='',
     author='Jose Carlos Lopez Arriaga; Ana Isabel Gutierrez Chavez',

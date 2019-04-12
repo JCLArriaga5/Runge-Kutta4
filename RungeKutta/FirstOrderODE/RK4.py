@@ -11,7 +11,7 @@ class RK4(object):
     Example:
         def f(t, y):
             return 2*t -3*y + 1
-        y = RK4(f)
+        y = FirstOrderODE(f)
         ► To get the solution given the initial conditions
         ti = 1
         yi = 5
