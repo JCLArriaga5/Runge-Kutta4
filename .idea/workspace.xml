@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK/Runge Kutta GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,22 +69,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RungeKutta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
-              <item name="RungeKutta" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -276,12 +257,12 @@
       <workItem from="1554848626747" duration="7681000" />
       <workItem from="1555026601899" duration="7018000" />
       <workItem from="1557295524304" duration="520000" />
-      <workItem from="1557372791996" duration="1323000" />
+      <workItem from="1557372791996" duration="1467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26010000" />
+    <option name="totallyTimeSpent" value="26154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
