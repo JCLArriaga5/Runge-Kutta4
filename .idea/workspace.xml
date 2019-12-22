@@ -34,6 +34,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/CarlosLopezNubes5/RungeKutta.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1VGSOebMiKw32gjPI0SFoVWlUSl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -229,12 +236,24 @@
       <workItem from="1555026601899" duration="7018000" />
       <workItem from="1557295524304" duration="520000" />
       <workItem from="1557372791996" duration="1467000" />
-      <workItem from="1576877935463" duration="11883000" />
+      <workItem from="1576877935463" duration="12115000" />
+      <workItem from="1576977936644" duration="8673000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="1550" y="25" key="SettingsEditor" timestamp="1576878772347">

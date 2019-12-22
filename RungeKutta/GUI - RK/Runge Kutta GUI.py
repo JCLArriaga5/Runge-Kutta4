@@ -22,16 +22,20 @@ class RungeKuttaGUI:
         myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
-        label_equation = Label(master, text='Enter Equation')
-        label_equation.pack()
+        titleODE = Label(master, text="Ordinary differential equations of the first order",
+                         bg="#4F5251", fg="white", font="time 12 bold")
+        titleODE.place(x=60, y=40)
+
+        label_equation = Label(master, text='Enter equation: ')
+        label_equation.place(x=60, y=80, width=100, height=30)
 
         self.equation = StringVar()
         self.equation.set('2*t -3*y + 1')
         equantion_entry = Entry(master, width=12, textvariable=self.equation)
-        equantion_entry.pack()
+        equantion_entry.place(x=160, y=80, width=100, height=30)
 
         self.label_parameters = Label(master, text='Parameters')
-        self.label_parameters.pack()
+        self.label_parameters.place(x=80, y=150, width=100, height=30)
 
         # ti parameter
         self.label_ti = Label(master, text='ti:')
@@ -77,15 +81,16 @@ class RungeKuttaGUI:
         self.button_close.pack()
 
     def f(self, t, y):
-        # ODE = (self.equation.get())
-        ODEtemp = 2 * t - 3 * y + 1 #While developing a correct form for entry equation
-        return ODEtemp
+        ODE = eval(self.equation.get())
+        # ODE = 2 * t - 3 * y + 1  # While developing a correct form for entry equation
+        return ODE
 
     def solve(self):
         self.rk4 = RK4(self.f)
         computed = self.rk4.solve(np.double(self.ti.get()), np.double(self.yi.get()), np.double(self.done.get()),
                                   np.double(self.h.get()))
         self.computed.set(computed)
+
 
 root = Tk()
 rk = RungeKuttaGUI(root)
