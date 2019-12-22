@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK/Runge Kutta GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK/Runge Kutta GUI.py" afterDir="false" />
-    </list>
+    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,7 +234,7 @@
       <workItem from="1557295524304" duration="520000" />
       <workItem from="1557372791996" duration="1467000" />
       <workItem from="1576877935463" duration="12115000" />
-      <workItem from="1576977936644" duration="8673000" />
+      <workItem from="1576977936644" duration="8725000" />
     </task>
     <servers />
   </component>
