@@ -2,12 +2,12 @@ import ctypes
 from tkinter import *
 from RungeKutta.FirstOrderODE.RK4 import *
 import numpy as np
-from math import *
 
 
 class RungeKuttaGUI:
     def __init__(self, master):
         # Window design
+        self.rk4 = RK4(self.f)
         self.master = master
         master.title("Runge Kutta 4th Order")
         master.config(bg="#4F5251")
@@ -77,15 +77,19 @@ class RungeKuttaGUI:
         self.label_computed = Label(master, textvariable=self.computed, width=20)
         self.label_computed.place(x=190, y=190, width=150, height=30)
 
-        self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=master.quit)
+        self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=master.quit())
         self.button_close.place(x=1000, y=500, width=80, height=30)
 
     def f(self, t, y):
+        """
+
+        @param t: Variable needed for the function imported from RK4
+        @param y: Variable needed for the function imported from RK4
+        """
         ODE = eval(self.equation.get())
         return ODE
 
     def solve(self):
-        self.rk4 = RK4(self.f)
         computed = self.rk4.solve(np.double(self.ti.get()), np.double(self.yi.get()), np.double(self.done.get()),
                                   np.double(self.h.get()))
         self.computed.set(computed)
