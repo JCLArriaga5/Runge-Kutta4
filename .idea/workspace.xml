@@ -238,7 +238,7 @@
       <workItem from="1557372791996" duration="1467000" />
       <workItem from="1576877935463" duration="12115000" />
       <workItem from="1576977936644" duration="9168000" />
-      <workItem from="1577163432742" duration="5905000" />
+      <workItem from="1577163432742" duration="6580000" />
     </task>
     <servers />
   </component>
@@ -259,6 +259,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="41" key="#Inspections" timestamp="1577170100255">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="41" key="#Inspections/0.0.1366.768@0.0.1366.768" timestamp="1577170100255" />
+    <state x="275" y="35" width="816" height="733" key="#Intentions" timestamp="1577169775449">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="35" width="816" height="733" key="#Intentions/0.0.1366.768@0.0.1366.768" timestamp="1577169775449" />
     <state x="1550" y="25" key="SettingsEditor" timestamp="1576878772347">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
