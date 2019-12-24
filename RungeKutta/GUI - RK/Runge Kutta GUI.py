@@ -1,4 +1,5 @@
 import ctypes
+# noinspection PyCompatibility
 from tkinter import *
 from RungeKutta.FirstOrderODE.RK4 import *
 import numpy as np
@@ -80,6 +81,7 @@ class RungeKuttaGUI:
         self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=master.quit())
         self.button_close.place(x=1000, y=500, width=80, height=30)
 
+    # noinspection PyUnusedLocal
     def f(self, t, y):
         """
 
