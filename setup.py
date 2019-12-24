@@ -9,5 +9,5 @@ setup(
     author='Jose Carlos Lopez Arriaga; Ana Isabel Gutierrez Chavez',
     author_email='',
     description='Implementation of the Runge Kutta 4th order method for ODEs',
-    install_requires=['numpy', 'matplotlib']
+    install_requires=['numpy', 'matplotlib', 'ctypes', 'tkinter']
 )
