@@ -6,7 +6,7 @@ setup(
     packages=['FirstOrderODE, SecondOrderODE'],
     url='https://github.com/CarlosLopezNubes5/RungeKutta',
     license='MIT',
-    author='Jose Carlos Lopez Arriaga; Ana Isabel Gutierrez Chavez',
+    author='José Carlos López Arriaga; Ana Isabel Gutiérrez Chávez',
     author_email='',
     description='Implementation of the Runge Kutta 4th order method for ODEs',
     install_requires=['numpy', 'matplotlib', 'cpython']
