@@ -1,3 +1,4 @@
+from __future__ import division
 import numpy as np
-
-np.set_printoptions(suppress=True)
+import matplotlib.pyplot as plt
+from math import *
