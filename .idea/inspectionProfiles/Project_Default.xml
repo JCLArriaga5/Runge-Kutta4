@@ -37,6 +37,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="matplotlib.cm.*" />
+          <option value="matplotlib.backends.backend_tkagg.FigureCanvasTkAgg.show" />
         </list>
       </option>
     </inspection_tool>

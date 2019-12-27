@@ -1,6 +1,9 @@
 import ctypes
 # noinspection PyCompatibility
 from tkinter import *
+import matplotlib
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
+from matplotlib.figure import Figure
 from RungeKutta.FirstOrderODE.RK4 import *
 import numpy as np
 
@@ -8,8 +11,9 @@ import numpy as np
 class RungeKuttaGUI:
     def __init__(self, master):
         # Window design
-        self.rk4 = RK4(self.f)
         self.master = master
+        self.fig = Figure(figsize=(5, 4), dpi=100, facecolor='#4F5251')
+        self.rk4 = RK4(self.f)
         master.title("Runge Kutta 4th Order")
         master.config(bg="#4F5251")
         master.geometry("1200x600")
@@ -78,6 +82,14 @@ class RungeKuttaGUI:
         self.label_computed = Label(master, textvariable=self.computed, width=20)
         self.label_computed.place(x=190, y=190, width=150, height=30)
 
+        # Graph
+        graph_label = Label(master, text='Graph the function with respect to time',
+                            bg="#4F5251", fg="white", font="time 12 bold")
+        graph_label.place(x=800, y=40)
+        graph_button = Button(master, text='Graph Function', command=self.graph, relief='flat', bg='#989E9C')
+        graph_button.place(x=800, y=80, width=200, height=20)
+
+
         self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=master.quit())
         self.button_close.place(x=1000, y=500, width=80, height=30)
 
@@ -85,9 +97,9 @@ class RungeKuttaGUI:
     def f(self, t, y):
         """
 
-        @param t: Variable needed for the function imported from RK4
-        @param y: Variable needed for the function imported from RK4
-        """
+                    @param t: Variable needed for the function imported from RK4
+                    @param y: Variable needed for the function imported from RK4
+                    """
         ODE = eval(self.equation.get())
         return ODE
 
@@ -97,7 +109,19 @@ class RungeKuttaGUI:
         self.computed.set(computed)
 
     def graph(self):
-        self.rk4.graph()
+        self.rk4.graph('r--', label="Function y")
+        ts, ys = self.rk4.graphvalues()
+        ax = self.fig.add_subplot(111)
+        ax.set_title("Graph of the function")
+        ax.plot(ts, ys)
+        ax.set_xlabel("$ t $")
+        ax.set_ylabel("$ y(t) $")
+        
+
+        canvas = FigureCanvasTkAgg(self.fig, self.master)
+        canvas.draw()
+        canvas.get_tk_widget().place(x=600, y=120)
+
 
 
 root = Tk()

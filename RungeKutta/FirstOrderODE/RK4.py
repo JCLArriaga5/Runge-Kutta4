@@ -98,6 +98,9 @@ class RK4(object):
         plt.title("Value table")
         plt.show()
 
+    def graphvalues(self):
+        return self.ts, self.ys
+
 
 if __name__ == "__main__":
     def f(t, y):
