@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK4/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/install_dev.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK4/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK/RK4logon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK4/RK4logon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK/Runge Kutta GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK4/Runge Kutta GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +61,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -76,7 +70,7 @@
       <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Runge Kutta GUI">
+  <component name="RunManager" selected="Python.setup">
     <configuration name="RK" type="PythonConfigurationType" factoryName="Python">
       <module name="RungeKutta" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,8 +203,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RungeKutta" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.setup" />
         <item itemvalue="Python.RungeKutta test" />
         <item itemvalue="Python.RK4 (1)" />
         <item itemvalue="Python.RK4" />
@@ -249,7 +266,8 @@
       <workItem from="1576877935463" duration="12115000" />
       <workItem from="1576977936644" duration="9168000" />
       <workItem from="1577163432742" duration="7681000" />
-      <workItem from="1577400775265" duration="1731000" />
+      <workItem from="1577400775265" duration="3915000" />
+      <workItem from="1577405194981" duration="445000" />
     </task>
     <servers />
   </component>
@@ -278,10 +296,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="35" width="816" height="733" key="#Intentions/0.0.1366.768@0.0.1366.768" timestamp="1577169775449" />
-    <state x="1550" y="25" key="SettingsEditor" timestamp="1576878772347">
+    <state x="1550" y="25" key="SettingsEditor" timestamp="1577403514198">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
-    <state x="1550" y="25" key="SettingsEditor/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1576878772347" />
+    <state x="1550" y="25" key="SettingsEditor/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577403514198" />
     <state x="1858" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576886427864">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
