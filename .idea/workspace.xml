@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/Runge Kutta GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK4/Runge Kutta GUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -286,7 +287,7 @@
       <workItem from="1576977936644" duration="9168000" />
       <workItem from="1577163432742" duration="7681000" />
       <workItem from="1577400775265" duration="3915000" />
-      <workItem from="1577405194981" duration="15026000" />
+      <workItem from="1577405194981" duration="15621000" />
     </task>
     <servers />
   </component>

@@ -115,7 +115,9 @@ class RungeKuttaGUI:
         ts, ys = self.rk4.graphvalues()
         ax = self.fig.add_subplot(111)
         ax.set_title("Graph of the function")
-        ax.plot(ts, ys)
+        ax.plot(ts, ys, 'r--')
+        ax.legend("y")
+        ax.grid()
         ax.set_xlabel("$ t $")
         ax.set_ylabel("$ y(t) $")
 
