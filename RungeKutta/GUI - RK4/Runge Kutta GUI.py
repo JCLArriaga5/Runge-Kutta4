@@ -109,14 +109,16 @@ class RungeKuttaGUI:
         self.computed.set(computed)
 
     def graph(self):
+        # Show in IDE
         self.rk4.graph('r--', label="Function y")
+        # Show in GUI
         ts, ys = self.rk4.graphvalues()
         ax = self.fig.add_subplot(111)
         ax.set_title("Graph of the function")
         ax.plot(ts, ys)
         ax.set_xlabel("$ t $")
         ax.set_ylabel("$ y(t) $")
-        
+
 
         canvas = FigureCanvasTkAgg(self.fig, self.master)
         canvas.draw()
