@@ -1,4 +1,5 @@
 import ctypes
+import os
 # noinspection PyCompatibility
 from tkinter import *
 import matplotlib
@@ -13,7 +14,10 @@ class RungeKuttaGUI:
         # Window design
         self.master = master
         self.fig = Figure(figsize=(5, 4), dpi=100, facecolor='#4F5251')
+        self.fig.clear()
         self.rk4 = RK4(self.f)
+        self.ts = 0
+        self.ys = 0
         master.title("Runge Kutta 4th Order")
         master.config(bg="#4F5251")
         master.geometry("1200x600")
@@ -75,7 +79,7 @@ class RungeKuttaGUI:
         self.entry_h.place(x=300, y=160, width=40, height=20)
 
         # computed
-        compute = Button(master, text='Compute', command=self.solve, relief='flat', bg='#989E9C')
+        compute = Button(master, text='Compute', command=self.solve, relief='raised', bg='#989E9C')
         compute.place(x=110, y=190, width=80, height=30)
 
         self.computed = DoubleVar()
@@ -86,20 +90,20 @@ class RungeKuttaGUI:
         graph_label = Label(master, text='Graph the function with respect to time',
                             bg="#4F5251", fg="white", font="time 12 bold")
         graph_label.place(x=800, y=40)
-        graph_button = Button(master, text='Graph Function', command=self.graph, relief='flat', bg='#989E9C')
+        graph_button = Button(master, text='Graph Function', command=self.graph, relief='raised', bg='#989E9C')
         graph_button.place(x=800, y=80, width=200, height=20)
 
-
-        self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=master.quit())
-        self.button_close.place(x=1000, y=500, width=80, height=30)
+        self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=self.exit)
+        self.button_close.place(x=1100, y=500, width=80, height=30)
 
     # noinspection PyUnusedLocal
     def f(self, t, y):
+        import math
         """
 
-                    @param t: Variable needed for the function imported from RK4
-                    @param y: Variable needed for the function imported from RK4
-                    """
+            @param t: Variable needed for the function imported from RK4
+            @param y: Variable needed for the function imported from RK4
+        """
         ODE = eval(self.equation.get())
         return ODE
 
@@ -110,22 +114,33 @@ class RungeKuttaGUI:
 
     def graph(self):
         # Show in IDE
-        self.rk4.graph('r--', label="Function y")
+        # self.rk4.graph('r--', label="Function y")
         # Show in GUI
-        ts, ys = self.rk4.graphvalues()
+        self.ts, self.ys = self.rk4.graphvalues()
         ax = self.fig.add_subplot(111)
+        ax.clear()
         ax.set_title("Graph of the function")
-        ax.plot(ts, ys, 'r--')
+        ax.plot(self.ts, self.ys, 'r--')
         ax.legend("y")
         ax.grid()
         ax.set_xlabel("$ t $")
         ax.set_ylabel("$ y(t) $")
 
-
         canvas = FigureCanvasTkAgg(self.fig, self.master)
         canvas.draw()
         canvas.get_tk_widget().place(x=600, y=120)
+        
+        # toolbar = NavigationToolbar2Tk(self.fig, self.master)
+        # toolbar.update()
+        # canvas.get_tk_widget().place()
 
+        self.ts = 0
+        self.ys = 0
+        return self.ts, self.ys
+
+    def exit(self):
+        self.master.quit()
+        sys.exit()
 
 
 root = Tk()
