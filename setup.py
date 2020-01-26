@@ -1,5 +1,5 @@
-import os
 
+import os
 try:
     from setuptools import setup
 except ImportError:
