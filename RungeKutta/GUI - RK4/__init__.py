@@ -4,5 +4,6 @@
 # differential equations of the first order, the purposes are educational and learning by the authors.
 
 import numpy as np
+import math
 
 np.set_printoptions(suppress=True)

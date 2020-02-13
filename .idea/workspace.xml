@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/CarlosLoAr.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI - RK4/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -71,74 +72,8 @@
       <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Runge Kutta GUI (1)">
-    <configuration name="RK" type="PythonConfigurationType" factoryName="Python">
-      <module name="RungeKutta" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RK4diffsys" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RK4diffsys/RK.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="RK4 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RungeKutta" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RungeKutta/RK4" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Lucila\Documents\GitHub\RungeKutta\RungeKutta\RK4\RK.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="RK4" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RungeKutta" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RK4" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RK4/RK4.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Runge Kutta GUI (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager">
+    <configuration name="Runge Kutta GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RungeKutta" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -154,50 +89,6 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RungeKutta/GUI - RK4/Runge Kutta GUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Runge Kutta GUI" type="PythonConfigurationType" factoryName="Python">
-      <module name="RungeKutta" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RungeKutta/GUI - RK" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\CarlosLoAr\Documents\GitHub\RungeKutta\RungeKutta\GUI - RK4\Runge Kutta GUI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="RungeKutta test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RungeKutta" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/RungeKutta test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -226,35 +117,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RungeKutta" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Runge Kutta GUI (1)" />
-        <item itemvalue="Python.RungeKutta test" />
-        <item itemvalue="Python.setup" />
-        <item itemvalue="Python.RK4 (1)" />
-        <item itemvalue="Python.RK4" />
+        <item itemvalue="Python.Runge Kutta GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +159,10 @@
       <workItem from="1577405194981" duration="16285000" />
       <workItem from="1577654556751" duration="5456000" />
       <workItem from="1577660988836" duration="189000" />
-      <workItem from="1579995748663" duration="1993000" />
+      <workItem from="1579995748663" duration="2374000" />
+      <workItem from="1581136320924" duration="2443000" />
+      <workItem from="1581138824438" duration="176000" />
+      <workItem from="1581139598767" duration="352000" />
     </task>
     <servers />
   </component>
@@ -323,37 +191,71 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="35" width="816" height="733" key="#Intentions/0.0.1366.768@0.0.1366.768" timestamp="1577169775449" />
+    <state x="136" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581137564003">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="136" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1581137564003" />
     <state x="433" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579996512823">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="433" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1579996512823" />
-    <state width="1323" height="190" key="GridCell.Tab.0.bottom" timestamp="1577407120878">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state x="504" y="223" key="FileChooserDialogImpl" timestamp="1581138718996">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="504" y="223" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1581138718996" />
+    <state width="1323" height="238" key="GridCell.Tab.0.bottom" timestamp="1581138803954">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
-    <state width="1323" height="190" key="GridCell.Tab.0.center" timestamp="1577407120878">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state width="1323" height="238" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
+    <state width="1323" height="238" key="GridCell.Tab.0.center" timestamp="1581138803953">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
-    <state width="1323" height="190" key="GridCell.Tab.0.left" timestamp="1577407120878">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state width="1323" height="238" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
+    <state width="1323" height="238" key="GridCell.Tab.0.left" timestamp="1581138803953">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
-    <state width="1323" height="190" key="GridCell.Tab.0.right" timestamp="1577407120878">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state width="1323" height="238" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
+    <state width="1323" height="238" key="GridCell.Tab.0.right" timestamp="1581138803953">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
-    <state x="1550" y="25" key="SettingsEditor" timestamp="1577403514198">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state width="1323" height="238" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1581138803954">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
+    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1581138803954">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
+    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1581138803954">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1581138803954">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
+    <state x="184" y="25" key="SettingsEditor" timestamp="1581139953248">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="1550" y="25" key="SettingsEditor/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577403514198" />
+    <state x="184" y="25" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1581139953248" />
     <state x="492" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579997917499">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="1858" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1576886427864" />
     <state x="492" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1579997917499" />
+    <state x="371" y="229" width="709" height="480" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1581139950967">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="371" y="229" width="709" height="480" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.768@0.0.1366.768" timestamp="1581139950967" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RungeKutta$Runge_Kutta_GUI.coverage" NAME="Runge Kutta GUI Coverage Results" MODIFIED="1581137575941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RungeKutta/GUI - RK4" />
     <SUITE FILE_PATH="coverage/RungeKutta$RK4__1_.coverage" NAME="RK4 (1) Coverage Results" MODIFIED="1555031139409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RungeKutta/RK4" />
     <SUITE FILE_PATH="coverage/RungeKutta$RK.coverage" NAME="RK Coverage Results" MODIFIED="1554854769738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RK4diffsys" />
     <SUITE FILE_PATH="coverage/RungeKutta$RungeKutta_test.coverage" NAME="RungeKutta test Coverage Results" MODIFIED="1577406717079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
