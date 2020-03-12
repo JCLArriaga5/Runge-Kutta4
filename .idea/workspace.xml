@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RungeKutta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RungeKutta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/RK4logon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RK4logon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/Runge Kutta GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RungeKutta_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/RungeKutta test.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/RungeKutta_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,14 +75,11 @@
       <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\examples" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.RungeKutta_test">
     <configuration name="Runge Kutta GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RungeKutta" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RungeKutta/GUI - RK4" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -89,6 +87,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RungeKutta/GUI - RK4/Runge Kutta GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RungeKutta_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RungeKutta" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/RungeKutta_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.RungeKutta_test" />
         <item itemvalue="Python.Runge Kutta GUI" />
       </list>
     </recent_temporary>
@@ -165,8 +183,16 @@
       <workItem from="1581136320924" duration="2443000" />
       <workItem from="1581138824438" duration="176000" />
       <workItem from="1581139598767" duration="352000" />
-      <workItem from="1583981808117" duration="769000" />
+      <workItem from="1583981808117" duration="1761000" />
     </task>
+    <task id="LOCAL-00001" summary="Update">
+      <created>1583982708746</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583982708746</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +211,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="275" y="41" key="#Inspections" timestamp="1577170100255">
       <screen x="0" y="0" width="1366" height="768" />
@@ -202,10 +232,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="433" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1579996512823" />
-    <state x="217" y="24" key="CommitChangelistDialog2" timestamp="1583982265975">
+    <state x="217" y="24" key="CommitChangelistDialog2" timestamp="1583982794217">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
-    <state x="217" y="24" key="CommitChangelistDialog2/43.24.1323.744@43.24.1323.744" timestamp="1583982265975" />
+    <state x="217" y="24" key="CommitChangelistDialog2/43.24.1323.744@43.24.1323.744" timestamp="1583982794217" />
     <state x="143" y="96" width="1123" height="572" key="DiffContextDialog" timestamp="1583982661652">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
@@ -256,16 +286,20 @@
     <state x="1550" y="25" key="SettingsEditor/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577403514198" />
     <state x="184" y="25" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1581139953248" />
     <state x="221" y="40" key="SettingsEditor/43.24.1323.744@43.24.1323.744" timestamp="1583982395591" />
-    <state x="303" y="118" key="Vcs.Push.Dialog.v2" timestamp="1583982524913">
+    <state x="303" y="118" key="Vcs.Push.Dialog.v2" timestamp="1583982838447">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
-    <state x="303" y="118" key="Vcs.Push.Dialog.v2/43.24.1323.744@43.24.1323.744" timestamp="1583982524913" />
-    <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583982668624">
+    <state x="303" y="118" key="Vcs.Push.Dialog.v2/43.24.1323.744@43.24.1323.744" timestamp="1583982838447" />
+    <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583983584635">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
     <state x="1858" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1576886427864" />
     <state x="492" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1579997917499" />
-    <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/43.24.1323.744@43.24.1323.744" timestamp="1583982668624" />
+    <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/43.24.1323.744@43.24.1323.744" timestamp="1583983584635" />
+    <state x="345" y="175" key="git4idea.merge.GitPullDialog" timestamp="1583982821349">
+      <screen x="43" y="24" width="1323" height="744" />
+    </state>
+    <state x="345" y="175" key="git4idea.merge.GitPullDialog/43.24.1323.744@43.24.1323.744" timestamp="1583982821349" />
     <state x="371" y="229" width="709" height="480" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1581139950967">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
