@@ -3,7 +3,8 @@
 # Implementation of the Runge Kutta method of fourth order, a small module was implemented to solve ordinary
 # differential equations of the first order, the purposes are educational and learning by the authors.
 
-import numpy as np
+from .FirstOrderODE.RK4 import *
+from .SecondOrderODE.RK import *
 
 np.set_printoptions(suppress=True)
 
