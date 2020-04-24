@@ -10,13 +10,13 @@ with open('requirements.txt') as f:
 
 
 setup(
-    name='RungeKutta',
+    name='Runge-Kutta4',
     version='1.0',
-    packages=['FirstOrderODE, SecondOrderODE'],
-    url='https://github.com/CarlosLopezNubes5/RungeKutta',
+    packages=['RungeKutta'],
+    url='https://github.com/JCLArriaga5/Runge-Kutta4',
     license='MIT',
     author='José Carlos López Arriaga; Ana Isabel Gutiérrez Chávez',
-    author_email='',
+    author_email='josecarloslopezarriaga@gmail.com',
     description='Implementation of the Runge Kutta 4th order method for ODEs',
     install_requires=required
 )

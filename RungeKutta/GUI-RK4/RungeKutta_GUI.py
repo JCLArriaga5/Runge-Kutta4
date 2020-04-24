@@ -1,11 +1,9 @@
 import ctypes
-import os
 # noinspection PyCompatibility
 from tkinter import *
-import matplotlib
-from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
-from RungeKutta.FirstOrderODE.RK4 import *
+from RungeKutta.RK4 import *
 import numpy as np
 
 
@@ -15,7 +13,7 @@ class RungeKuttaGUI:
         self.master = master
         self.fig = Figure(figsize=(5, 4), dpi=100, facecolor='#4F5251')
         self.fig.clear()
-        self.rk4 = RK4(self.f)
+        self.rk4 = firstorder(self.f)
         self.ts = 0
         self.ys = 0
         master.title("Runge Kutta 4th Order")
@@ -98,7 +96,6 @@ class RungeKuttaGUI:
 
     # noinspection PyUnusedLocal
     def f(self, t, y):
-        import math
         """
 
             @param t: Variable needed for the function imported from RK4

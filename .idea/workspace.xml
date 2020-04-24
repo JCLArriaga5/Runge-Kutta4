@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/RK4logon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RK4logon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/Runge Kutta GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RungeKutta_GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI - RK4/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/RungeKutta test.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/RungeKutta_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/RK4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RungeKutta_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RungeKutta_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/RungeKutta_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/RungeKutta_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +73,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/RungeKutta" />
       <recent name="C:\Users\CarlosLoAr\Documents\GitHub\RungeKutta\RungeKutta\GUI - RK4" />
       <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\RungeKutta" />
       <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\examples" />
@@ -80,6 +84,9 @@
       <module name="RungeKutta" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RungeKutta/GUI - RK4" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -184,6 +191,7 @@
       <workItem from="1581138824438" duration="176000" />
       <workItem from="1581139598767" duration="352000" />
       <workItem from="1583981808117" duration="1761000" />
+      <workItem from="1587704082922" duration="1573000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1583982708746</created>
@@ -216,14 +224,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="41" key="#Inspections" timestamp="1577170100255">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="275" y="41" key="#Inspections/0.0.1366.768@0.0.1366.768" timestamp="1577170100255" />
-    <state x="275" y="35" width="816" height="733" key="#Intentions" timestamp="1577169775449">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="275" y="35" width="816" height="733" key="#Intentions/0.0.1366.768@0.0.1366.768" timestamp="1577169775449" />
     <state x="136" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581137564003">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -232,6 +232,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="433" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1579996512823" />
+    <state x="420" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587705484704">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="420" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.24.1366.744@0.24.1366.744" timestamp="1587705484704" />
     <state x="217" y="24" key="CommitChangelistDialog2" timestamp="1583982794217">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
@@ -247,22 +251,18 @@
     <state width="1323" height="238" key="GridCell.Tab.0.bottom" timestamp="1581138803954">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="190" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
     <state width="1323" height="238" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
     <state width="1323" height="238" key="GridCell.Tab.0.center" timestamp="1581138803953">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="190" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
     <state width="1323" height="238" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
     <state width="1323" height="238" key="GridCell.Tab.0.left" timestamp="1581138803953">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="190" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
     <state width="1323" height="238" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
     <state width="1323" height="238" key="GridCell.Tab.0.right" timestamp="1581138803953">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="190" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577407120878" />
     <state width="1323" height="238" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
     <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1581138803954">
       <screen x="0" y="0" width="1366" height="768" />
@@ -283,7 +283,6 @@
     <state x="221" y="40" key="SettingsEditor" timestamp="1583982395591">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
-    <state x="1550" y="25" key="SettingsEditor/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1577403514198" />
     <state x="184" y="25" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1581139953248" />
     <state x="221" y="40" key="SettingsEditor/43.24.1323.744@43.24.1323.744" timestamp="1583982395591" />
     <state x="303" y="118" key="Vcs.Push.Dialog.v2" timestamp="1583982838447">
@@ -293,7 +292,6 @@
     <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583983584635">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
-    <state x="1858" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768/1366.0.1366.768@1366.0.1366.768" timestamp="1576886427864" />
     <state x="492" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1579997917499" />
     <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/43.24.1323.744@43.24.1323.744" timestamp="1583983584635" />
     <state x="345" y="175" key="git4idea.merge.GitPullDialog" timestamp="1583982821349">

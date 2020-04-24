@@ -1,5 +1,4 @@
-from RungeKutta.FirstOrderODE.RK4 import *
-from RungeKutta.SecondOrderODE.RK import *
+from RungeKutta.RK4 import *
 from math import e
 
 
@@ -8,7 +7,7 @@ def f(t, y):
     return 2 * t - 3 * y + 1
 
 
-r = RK4(f)
+r = firstorder(f)
 ti = 1
 yi = 5
 done = 1.5
@@ -27,7 +26,7 @@ def g(v, u, t):
     return 4 * v + 6 * e ** (3 * t) - 3 * e ** (-t)
 
 
-r2 = RK(f1, g)
+r2 = secondorder(f1, g)
 u_i = 1
 v_i = -1
 t_i = 0
