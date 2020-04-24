@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import ctypes
 # noinspection PyCompatibility
 from tkinter import *
@@ -126,7 +128,7 @@ class RungeKuttaGUI:
         canvas = FigureCanvasTkAgg(self.fig, self.master)
         canvas.draw()
         canvas.get_tk_widget().place(x=600, y=120)
-        
+
         # toolbar = NavigationToolbar2Tk(self.fig, self.master)
         # toolbar.update()
         # canvas.get_tk_widget().place()

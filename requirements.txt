@@ -1,4 +1,4 @@
-numpy
-cpython
+numpy>=1.18.1
+cPython>=0.0.5
 tkinter
-matplotlib
+matplotlib>=3.0.3 

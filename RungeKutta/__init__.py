@@ -7,4 +7,3 @@ from __future__ import division
 from RungeKutta.RK4 import *
 
 np.set_printoptions(suppress=True)
-
