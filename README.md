@@ -1,15 +1,8 @@
-<center>
-  <figure>
-    <img src="logo\RK4-logo.png?raw=true"
-    alt="Figure 1"
-    width="150"
-    height="150">
-  </figure>
-</center>
+<p align="center"><img src="logo/RK4-logo.png" height="150"></p>
 
 ## Runge-Kutta4
 
-Fourth-order runge kutta method to solve ordinary differential equations (ODE's) given the initial conditions of the equation, to obtain the solution. The implementation can resolve first and second order ODEs.
+Fourth-order Runge Kutta method to solve ordinary differential equations (ODE's) given the initial conditions of the equation, to obtain the solution. The implementation can resolve first and second order ODEs.
 
 To solve the second order ODE's can be decomposed into a system of differential equations, as shown below.
 - y = u
