@@ -22,7 +22,8 @@ class RungeKuttaGUI:
         master.config(bg="#4F5251")
         master.geometry("1200x600")
         master.resizable(width=FALSE, height=FALSE)
-        master.wm_iconbitmap(default='RK4logon.ico')
+
+        master.wm_iconbitmap(default='RK4-logo.ico') # For Windows system show icon
 
         titletext = Label(master, text="Runge Kutta 4th Order",
                           bg="#4F5251", fg="white", font="time 20 bold")

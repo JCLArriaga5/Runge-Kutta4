@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bb5385-24e8-4e23-90aa-90cdfdc7a42d" name="Default Changelist" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/RungeKutta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RungeKutta.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/RK4.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/RK4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/FirstOrderODE/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RK4logon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RungeKutta_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/GUI-RK4/RungeKutta_GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/RK.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/SecondOrderODE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RungeKutta/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RungeKutta/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/RungeKutta_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/RungeKutta_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +65,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -79,7 +75,7 @@
       <recent name="C:\Users\Lucila\Documents\GitHub\RungeKutta\examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.RungeKutta_test">
+  <component name="RunManager" selected="Python.RungeKutta_GUI">
     <configuration name="Runge Kutta GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RungeKutta" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,10 +98,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="RungeKutta_GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RungeKutta" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RungeKutta/GUI-RK4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RungeKutta/GUI-RK4/RungeKutta_GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="RungeKutta_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RungeKutta" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -145,6 +163,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.RungeKutta_GUI" />
         <item itemvalue="Python.RungeKutta_test" />
         <item itemvalue="Python.Runge Kutta GUI" />
       </list>
@@ -192,6 +211,7 @@
       <workItem from="1581139598767" duration="352000" />
       <workItem from="1583981808117" duration="1761000" />
       <workItem from="1587704082922" duration="1573000" />
+      <workItem from="1590712508799" duration="1049000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1583982708746</created>
@@ -224,14 +244,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="136" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581137564003">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="136" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1581137564003" />
-    <state x="433" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579996512823">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="433" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1579996512823" />
     <state x="420" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587705484704">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -244,46 +256,10 @@
       <screen x="43" y="24" width="1323" height="744" />
     </state>
     <state x="143" y="96" width="1123" height="572" key="DiffContextDialog/43.24.1323.744@43.24.1323.744" timestamp="1583982661652" />
-    <state x="504" y="223" key="FileChooserDialogImpl" timestamp="1581138718996">
+    <state x="184" y="17" key="SettingsEditor" timestamp="1590712683444">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="504" y="223" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1581138718996" />
-    <state width="1323" height="238" key="GridCell.Tab.0.bottom" timestamp="1581138803954">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
-    <state width="1323" height="238" key="GridCell.Tab.0.center" timestamp="1581138803953">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
-    <state width="1323" height="238" key="GridCell.Tab.0.left" timestamp="1581138803953">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
-    <state width="1323" height="238" key="GridCell.Tab.0.right" timestamp="1581138803953">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1581138803953" />
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1581138803954">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
-    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1581138803954">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
-    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1581138803954">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
-    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1581138803954">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1581138803954" />
-    <state x="221" y="40" key="SettingsEditor" timestamp="1583982395591">
-      <screen x="43" y="24" width="1323" height="744" />
-    </state>
-    <state x="184" y="25" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1581139953248" />
+    <state x="184" y="17" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1590712683444" />
     <state x="221" y="40" key="SettingsEditor/43.24.1323.744@43.24.1323.744" timestamp="1583982395591" />
     <state x="303" y="118" key="Vcs.Push.Dialog.v2" timestamp="1583982838447">
       <screen x="43" y="24" width="1323" height="744" />
@@ -292,22 +268,17 @@
     <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583983584635">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
-    <state x="492" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1579997917499" />
     <state x="520" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/43.24.1323.744@43.24.1323.744" timestamp="1583983584635" />
     <state x="345" y="175" key="git4idea.merge.GitPullDialog" timestamp="1583982821349">
       <screen x="43" y="24" width="1323" height="744" />
     </state>
     <state x="345" y="175" key="git4idea.merge.GitPullDialog/43.24.1323.744@43.24.1323.744" timestamp="1583982821349" />
-    <state x="371" y="229" width="709" height="480" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1581139950967">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="371" y="229" width="709" height="480" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.768@0.0.1366.768" timestamp="1581139950967" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RungeKutta$RK.coverage" NAME="RK Coverage Results" MODIFIED="1554854769738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RK4diffsys" />
     <SUITE FILE_PATH="coverage/RungeKutta$Runge_Kutta_GUI.coverage" NAME="Runge Kutta GUI Coverage Results" MODIFIED="1581137575941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RungeKutta/GUI - RK4" />
+    <SUITE FILE_PATH="coverage/RungeKutta$RK4__1_.coverage" NAME="RK4 (1) Coverage Results" MODIFIED="1555031139409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RungeKutta/RK4" />
+    <SUITE FILE_PATH="coverage/RungeKutta$RK.coverage" NAME="RK Coverage Results" MODIFIED="1554854769738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RK4diffsys" />
     <SUITE FILE_PATH="coverage/RungeKutta$RungeKutta_test.coverage" NAME="RungeKutta test Coverage Results" MODIFIED="1577406717079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/RungeKutta$RK4.coverage" NAME="RK4 Coverage Results" MODIFIED="1554854783318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RK4" />
-    <SUITE FILE_PATH="coverage/RungeKutta$RK4__1_.coverage" NAME="RK4 (1) Coverage Results" MODIFIED="1555031139409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RungeKutta/RK4" />
   </component>
 </project>
