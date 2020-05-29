@@ -3,6 +3,11 @@
 import ctypes
 # noinspection PyCompatibility
 from tkinter import *
+import sys
+import os
+abspath = os.getcwd()
+dirpath = abspath.replace('/RungeKutta/GUI-RK4', '/')
+sys.path.append(dirpath)
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
 from RungeKutta.RK4 import *
@@ -23,14 +28,19 @@ class RungeKuttaGUI:
         master.geometry("1200x600")
         master.resizable(width=FALSE, height=FALSE)
 
-        master.wm_iconbitmap(default='RK4-logo.ico') # For Windows system show icon
+        # Detect OS for iconbitmap
+        self.OS = sys.platform
+        if self.OS == 'linux' or 'darwin':
+            icon = PhotoImage(file='images/RK4-logo.png')
+            master.tk.call('wm', 'iconphoto', master._w, icon)
+        else:
+            master.wm_iconbitmap(default='images/RK4-logo.ico') # For Windows system show icon
+            myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         titletext = Label(master, text="Runge Kutta 4th Order",
                           bg="#4F5251", fg="white", font="time 20 bold")
         titletext.pack(side='top')
-
-        myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
-        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         titleODE = Label(master, text="Ordinary differential equations of the first order",
                          bg="#4F5251", fg="white", font="time 12 bold")
