@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # José Carlos  López Arriaga & Ana Isabel Gutiérrez Chávez
 #
 # Implementation of the Runge Kutta method of fourth order, a small module was implemented to solve ordinary

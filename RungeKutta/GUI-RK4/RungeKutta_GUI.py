@@ -2,10 +2,14 @@
 
 from __future__ import division
 import ctypes
-# noinspection PyCompatibility
-from tkinter import *
 import sys
 import os
+
+if eval(sys.version[0]) < 3: # For Python 2
+    from Tkinter import *
+else:
+    from tkinter import *
+
 abspath = os.getcwd()
 dirpath = abspath.replace('/RungeKutta/GUI-RK4', '/')
 sys.path.append(dirpath)
@@ -32,13 +36,13 @@ class RungeKuttaGUI:
         # Detect OS for iconbitmap
         self.OS = sys.platform
         if self.OS == 'linux' or 'darwin':
-            icon = PhotoImage(file='images/RK4-logo.png')
+            icon = PhotoImage(file=abspath + '/images/RK4-logo.png')
             master.tk.call('wm', 'iconphoto', master._w, icon)
         if self.OS == 'win32':
             # icon = PhotoImage(file='images/RK4-logo.png')
             # master.tk.call('wm', 'iconphoto', master._w, icon)
 
-            master.wm_iconbitmap(default='images/RK4-logo.ico') # For Windows system show icon
+            master.wm_iconbitmap(default=abspath + '/images/RK4-logo.ico') # For Windows system show icon
             myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
