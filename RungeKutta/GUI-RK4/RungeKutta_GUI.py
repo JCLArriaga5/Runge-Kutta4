@@ -23,17 +23,24 @@ class RungeKuttaGUI:
     def __init__(self, master):
         # Window design
         self.master = master
+
+        master.title("Runge Kutta 4th Order")
+        master.config(bg="#4F5251")
+        master.geometry("1200x600-600-300")
+        master.resizable(width=FALSE, height=FALSE)
+
+        # Initialize graph parameters
         self.fig = Figure(figsize=(5, 4), dpi=100, facecolor='#4F5251')
-        self.fig.clear()
+        self.fig.clf()
+        self.ax = self.fig.add_subplot(111, facecolor='#4F5251')
+        self.canvas = FigureCanvasTkAgg(self.fig, self.master)
+        self.canvas.draw()
+
+        # Initialize Runge-Kutta firstorder ode
         self.rk4 = firstorder(self.f)
         self.ts = 0
         self.ys = 0
-        master.title("Runge Kutta 4th Order")
-        master.config(bg="#4F5251")
-        master.geometry("1200x600")
-        master.resizable(width=FALSE, height=FALSE)
-
-        # Detect OS for iconbitmap
+        # Detect OS for icon
         self.OS = sys.platform
         if self.OS == 'linux' or 'darwin':
             icon = PhotoImage(file=abspath + '/images/RK4-logo.png')
@@ -126,35 +133,27 @@ class RungeKuttaGUI:
         return ODE
 
     def solve(self):
+        self.ax.clear()
         computed = self.rk4.solve(np.double(self.ti.get()), np.double(self.yi.get()), np.double(self.done.get()),
                                   np.double(self.h.get()))
         self.computed.set(computed)
 
     def graph(self):
-        # Show in IDE
-        # self.rk4.graph('r--', label="Function y")
-        # Show in GUI
+            # Show in GUI
+        # Obtain values of solution
         self.ts, self.ys = self.rk4.graphvalues()
-        ax = self.fig.add_subplot(111)
-        ax.clear()
-        ax.set_title("Graph of the function")
-        ax.plot(self.ts, self.ys, 'r--')
-        ax.legend("y")
-        ax.grid()
-        ax.set_xlabel("$ t $")
-        ax.set_ylabel("$ y(t) $")
+        self.ax.clear()
+        self.ax.set_title("Graph of the function $dy/dt$= %s" % self.equation.get())
+        self.ax.plot(self.ts, self.ys, 'r--')
+        self.ax.legend("y")
+        self.ax.grid()
+        self.ax.set_xlabel("$ t $")
+        self.ax.set_ylabel("$ y(t) $")
 
-        canvas = FigureCanvasTkAgg(self.fig, self.master)
-        canvas.draw()
-        canvas.get_tk_widget().place(x=600, y=120)
+        self.canvas.draw()
+        self.canvas.get_tk_widget().place(x=600, y=120)
 
-        # toolbar = NavigationToolbar2Tk(self.fig, self.master)
-        # toolbar.update()
-        # canvas.get_tk_widget().place()
-
-        self.ts = 0
-        self.ys = 0
-        return self.ts, self.ys
+        self.ts, self.ys = self.rk4.clearvalues()
 
     def exit(self):
         self.master.quit()

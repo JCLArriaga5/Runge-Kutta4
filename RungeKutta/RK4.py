@@ -11,11 +11,11 @@ class firstorder(object):
     its initial conditions, obtain its graph and its table of values.
     The function receives equations of the form dy / dt = f(t,y)
     Example:
-        from RungeKutta.FirstOrderODE.RK4 import *
+        from RungeKutta.RK4 import firstorder
 
         def f(t, y):
             return 2*t -3*y + 1
-        y = RK4(f)
+        y = firstorder(f)
         ► To get the solution given the initial conditions
         ti = 1
         yi = 5
@@ -103,6 +103,12 @@ class firstorder(object):
     def graphvalues(self):
         return self.ts, self.ys
 
+    def clearvalues(self):
+        self.ts = []
+        self.ys = []
+
+        return self.ts, self.ys
+
 class secondorder(object):
     """
         Implementation of the method fourth order Runge Kutta, to obtain the value of a 2nd order differential
@@ -116,7 +122,7 @@ class secondorder(object):
         dv/dx = g(v, u, t)
 
         Example:
-            from RungeKutta.SecondOrderODE.RK import *
+            from RungeKutta.RK4 import secondorder
             from math import e
 
             def f(v):
@@ -125,7 +131,7 @@ class secondorder(object):
             def g(v, u, t):
                 return 4*v + 6*e**(3*t) - 3*e**(-t)
 
-            rk = RK(f, g)
+            rk = secondorder(f, g)
             ► To get the solution given the initial conditions
             ui = 1
             vi = -1
@@ -207,7 +213,6 @@ class secondorder(object):
 if __name__ == "__main__":
     def f(t, y):
         return 2 * t - 3 * y + 1
-
 
     rk = firstorder(f)
 

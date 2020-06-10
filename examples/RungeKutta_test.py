@@ -1,3 +1,9 @@
+import sys
+import os
+abspath = os.getcwd()
+dirpath = abspath.replace('/examples', '/')
+sys.path.append(dirpath)
+
 from RungeKutta.RK4 import *
 from math import e
 
