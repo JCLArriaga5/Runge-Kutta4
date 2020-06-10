@@ -28,6 +28,18 @@ class RungeKuttaGUI:
         master.config(bg="#4F5251")
         master.geometry("1200x600-600-300")
         master.resizable(width=FALSE, height=FALSE)
+        # Detect OS for icon
+        self.OS = sys.platform
+        if self.OS == 'linux' or 'darwin':
+            icon = PhotoImage(file=abspath + '/images/RK4-logo.png')
+            master.tk.call('wm', 'iconphoto', master._w, icon)
+            if self.OS == 'win32':
+                # icon = PhotoImage(file='images/RK4-logo.png')
+                # master.tk.call('wm', 'iconphoto', master._w, icon)
+
+                master.wm_iconbitmap(default=abspath + '/images/RK4-logo.ico') # For Windows system show icon
+                myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
+                ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         # Initialize graph parameters
         self.fig = Figure(figsize=(5, 4), dpi=100, facecolor='#4F5251')
@@ -40,18 +52,6 @@ class RungeKuttaGUI:
         self.rk4 = firstorder(self.f)
         self.ts = 0
         self.ys = 0
-        # Detect OS for icon
-        self.OS = sys.platform
-        if self.OS == 'linux' or 'darwin':
-            icon = PhotoImage(file=abspath + '/images/RK4-logo.png')
-            master.tk.call('wm', 'iconphoto', master._w, icon)
-        if self.OS == 'win32':
-            # icon = PhotoImage(file='images/RK4-logo.png')
-            # master.tk.call('wm', 'iconphoto', master._w, icon)
-
-            master.wm_iconbitmap(default=abspath + '/images/RK4-logo.ico') # For Windows system show icon
-            myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
-            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         titletext = Label(master, text="Runge Kutta 4th Order",
                           bg="#4F5251", fg="white", font="time 20 bold")
@@ -113,9 +113,9 @@ class RungeKuttaGUI:
         self.label_computed.place(x=190, y=190, width=150, height=30)
 
         # Graph
-        graph_label = Label(master, text='Graph the function with respect to time',
+        graph_label = Label(master, text='Graph the solution with respect to variable t',
                             bg="#4F5251", fg="white", font="time 12 bold")
-        graph_label.place(x=800, y=40)
+        graph_label.place(x=700, y=40)
         graph_button = Button(master, text='Graph Function', command=self.graph, relief='raised', bg='#989E9C')
         graph_button.place(x=800, y=80, width=200, height=20)
 
@@ -143,9 +143,9 @@ class RungeKuttaGUI:
         # Obtain values of solution
         self.ts, self.ys = self.rk4.graphvalues()
         self.ax.clear()
-        self.ax.set_title("Graph of the function $dy/dt$= %s" % self.equation.get())
+        self.ax.set_title(r'Solution graph of $\frac{dy}{dt}$= %s' % self.equation.get())
         self.ax.plot(self.ts, self.ys, 'r--')
-        self.ax.legend("y")
+        self.ax.legend('y')
         self.ax.grid()
         self.ax.set_xlabel("$ t $")
         self.ax.set_ylabel("$ y(t) $")
