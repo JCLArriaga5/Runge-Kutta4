@@ -33,13 +33,13 @@ class RungeKuttaGUI:
         if self.OS == 'linux' or 'darwin':
             icon = PhotoImage(file=abspath + '/images/RK4-logo.png')
             master.tk.call('wm', 'iconphoto', master._w, icon)
-            if self.OS == 'win32':
-                # icon = PhotoImage(file='images/RK4-logo.png')
-                # master.tk.call('wm', 'iconphoto', master._w, icon)
+        if self.OS == 'win32':
+            # icon = PhotoImage(file='images/RK4-logo.png')
+            # master.tk.call('wm', 'iconphoto', master._w, icon)
 
-                master.wm_iconbitmap(default=abspath + '/images/RK4-logo.ico') # For Windows system show icon
-                myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
-                ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+            master.wm_iconbitmap(default=abspath + '/images/RK4-logo.ico') # For Windows system show icon
+            myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         # Initialize graph parameters
         self.fig = Figure(figsize=(5, 4), dpi=100, facecolor='#4F5251')
