@@ -15,6 +15,10 @@ To solve the second order ODE's can be decomposed into a system of differential 
 ```sh
 $ python -m pip install git+https://github.com/JCLArriaga5/Runge-Kutta4.git
 ```
+
+## Examples
+For examples of how to use the functions see this [file](../master/examples/RungeKutta_test.py)
+
 ## GUI for first-order ODE's
 To run the GUI if you clone the repository, use the following commands
 ```sh
