@@ -2,7 +2,7 @@
 
 ## Runge-Kutta4
 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](../master/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](../master/LICENSE) ![size](https://img.shields.io/github/repo-size/JCLArriaga5/Runge-Kutta4)
 
 Fourth-order Runge Kutta method to solve ordinary differential equations (ODE's) given the initial conditions of the equation, to obtain the solution. The implementation can resolve first and second order ODEs.
 
