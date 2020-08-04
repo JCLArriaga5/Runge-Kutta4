@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python3
+#-*- coding: utf-8 -*-
 
 from __future__ import division
 import ctypes
@@ -6,7 +7,7 @@ import sys
 import os
 
 if eval(sys.version[0]) < 3: # For Python 2
-    from Tkinter import *
+    print('Error: Code requires Python3 or higher')
 else:
     from tkinter import *
 
@@ -159,7 +160,9 @@ class RungeKuttaGUI:
         self.master.quit()
         sys.exit()
 
-
-root = Tk()
-rk = RungeKuttaGUI(root)
-root.mainloop()
+if eval(sys.version[0]) < 3: # For Python 2
+    pass
+else:
+    root = Tk()
+    rk = RungeKuttaGUI(root)
+    root.mainloop()
