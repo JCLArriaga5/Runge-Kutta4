@@ -20,10 +20,12 @@ $ python -m pip install git+https://github.com/JCLArriaga5/Runge-Kutta4.git
 For examples of how to use the functions see this [file](../master/examples/RungeKutta_test.py)
 
 ## GUI for first-order ODE's
+Note: GUI needs Python 3 or higher
+
 To run the GUI if you clone the repository, use the following commands
 ```sh
 :~/Runge-Kutta4$ cd RungeKutta/GUI-RK4/
-:~/Runge-Kutta4/RungeKutta/GUI-RK4$ python RungeKutta_GUI.py
+:~/Runge-Kutta4/RungeKutta/GUI-RK4$ python3 RungeKutta_GUI.py
 ```
 The following window will open.
 <p align="center"><img src="images/GUI-preview.png" height=""></p>
