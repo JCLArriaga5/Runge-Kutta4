@@ -26,9 +26,8 @@ To run the GUI if you clone the repository, use the following commands
 :~/Runge-Kutta4/RungeKutta/GUI-RK4$ python RungeKutta_GUI.py
 ```
 The following window will open.
-
 <p align="center"><img src="images/GUI-preview.png" height=""></p>
 
 To see the default example, first click on `compute`. To see the solution graph press on the `Graph function` button, so that it is shown as in the following image.
 
-<p align="center"><img src="images/GUI-run.png" height=""></p>
+<p align="center"><img src="images/Runge_Kutta_4th_Order_Window.gif" height=""></p>
