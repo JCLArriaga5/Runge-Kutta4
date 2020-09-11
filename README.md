@@ -17,7 +17,11 @@ $ python -m pip install git+https://github.com/JCLArriaga5/Runge-Kutta4.git
 ```
 
 ## Examples
-For examples of how to use the functions see this [file](../master/examples/RungeKutta_test.py)
+For examples of how to use the functions see this [file](../master/examples/test.py), run the test:
+```sh
+:~/Runge-Kutta4$ cd examples/
+:~/Runge-Kutta4/examples$ python test.py
+```
 
 ## GUI for first-order ODE's
 Note: GUI needs Python 3 or higher
