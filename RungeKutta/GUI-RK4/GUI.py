@@ -7,7 +7,7 @@ import sys
 import os
 
 if eval(sys.version[0]) < 3: # For Python 2
-    print('Error: Code requires Python3 or higher')
+    raise ValueError('GUI Code requires Python3 or higher')
 else:
     from tkinter import *
 
