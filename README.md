@@ -15,6 +15,10 @@ To solve the second order ODE's can be decomposed into a system of differential 
 ```sh
 $ python -m pip install git+https://github.com/JCLArriaga5/Runge-Kutta4.git
 ```
+or clone repository
+```sh
+$ git clone https://github.com/JCLArriaga5/Runge-Kutta4.git
+```
 
 ## Examples
 For examples of how to use the functions see this [file](../master/examples/test.py), run the test:
