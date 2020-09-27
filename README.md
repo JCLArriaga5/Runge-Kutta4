@@ -12,12 +12,20 @@ To solve the second order ODE's can be decomposed into a system of differential 
 - dv/dx = y"
 
 ## Installation
-```sh
+<!-- ```sh
 $ python -m pip install git+https://github.com/JCLArriaga5/Runge-Kutta4.git
-```
-or clone repository
+``` -->
+Clone repository
 ```sh
 $ git clone https://github.com/JCLArriaga5/Runge-Kutta4.git
+```
+Enter the path where the repository was cloned and install the dependencies with the following command:
+```sh
+pip install -r requirements.txt
+```
+First check if you have [tkinter](https://docs.python.org/3.6/library/tkinter.html) installed, the GUI needs tkinter to run, use the following command to install tkinter:
+```sh
+sudo apt-get install python3-tk
 ```
 
 ## Examples
@@ -28,12 +36,13 @@ For examples of how to use the functions see this [file](../master/examples/test
 ```
 
 ## GUI for first-order ODE's
-Note: GUI needs Python 3 or higher
+<span style="color:red">Note: GUI needs Python 3 or higher</span>
 
-To run the GUI if you clone the repository, use the following commands
+
+To run the GUI use the following commands inside the path where the repository was cloned
 ```sh
 :~/Runge-Kutta4$ cd RungeKutta/GUI-RK4/
-:~/Runge-Kutta4/RungeKutta/GUI-RK4$ python3 RungeKutta_GUI.py
+:~/Runge-Kutta4/RungeKutta/GUI-RK4$ python3 GUI.py
 ```
 The following window will open.
 <p align="center"><img src="images/GUI-preview.png" height=""></p>
