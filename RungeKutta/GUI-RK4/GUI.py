@@ -160,9 +160,13 @@ class RungeKuttaGUI:
         self.master.quit()
         sys.exit()
 
-if eval(sys.version[0]) < 3: # For Python 2
-    pass
-else:
-    root = Tk()
-    rk = RungeKuttaGUI(root)
-    root.mainloop()
+def main():
+    if eval(sys.version[0]) < 3: # For Python 2
+        pass
+    else:
+        root = Tk()
+        rk = RungeKuttaGUI(root)
+        root.mainloop()
+
+if __name__ == '__main__':
+    main()
