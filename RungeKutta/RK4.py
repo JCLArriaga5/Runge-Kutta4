@@ -31,21 +31,33 @@ class firstorder(object):
 
     def __init__(self, function):
         """
-        :param function: Function to solve
+        Constructor
+
+        Parameters
+        ----------
+        function : Function to solve
         """
+
         self.ts = []
         self.ys = []
         self.f = function
 
     def solve(self, ti, yi, done, h):
         """
-        Initialize the ODE solution given the initial values
-        :param ti: Value of the initial t
-        :param yi: Value of the initial y
-        :param done: Value that you want to evaluate in the equation
-        :param h: Integration step
-        :return: Value of the equation
+        Solution of the first-order ordinary differential equation
+
+        Parameters
+        ----------
+        ti : Value of the initial t
+        yi : Value of the initial y
+        done : Value that you want to evaluate in the equation
+        h : Integration step
+
+        Return
+        ------
+        yi : Value of the equation
         """
+
         st = np.arange(ti, done, h)
 
         for _ in st:
@@ -63,11 +75,9 @@ class firstorder(object):
 
     def graph(self, *args, **kwargs):
         """
-        Graph the function with the values obtained from each iteration
-        :param args:
-        :param kwargs:
-        :return:
+        Graph the function with the values obtained from each iteration.
         """
+
         plt.title("Graph of the function")
         plt.plot(self.ts, self.ys, *args, **kwargs)
         plt.legend()
@@ -78,9 +88,7 @@ class firstorder(object):
 
     def table(self):
         """
-        Show the obtained table of the values of each iteration
-        :param:
-        :return: Table of values
+        Show the obtained table of the values of each iteration.
         """
         data = []
         for i in range(len(self.ts)):
@@ -101,9 +109,17 @@ class firstorder(object):
         plt.show()
 
     def graphvalues(self):
+        """
+        Obtain the solution values of each iteration.
+        """
+
         return self.ts, self.ys
 
     def clearvalues(self):
+        """
+        Clear all values of each iteration.
+        """
+
         self.ts = []
         self.ys = []
 
@@ -147,8 +163,12 @@ class secondorder(object):
 
     def __init__(self, function1, function2):
         """
-        :param function1: Function that depends on v (f(v))
-        :param function2: Function that depends on v, u, t (g(v, u, t))
+        Constructor
+
+        Parameters
+        ----------
+        function1 : Function that depends on v (f(v))
+        function2 : Function that depends on v, u, t (g(v, u, t))
         """
 
         self.f = function1
@@ -159,13 +179,20 @@ class secondorder(object):
 
     def solve(self, ti, ui, vi, done, h):
         """
-        Initialize the ODE solution given the initial values
-        :param ti: Value of the initial t
-        :param ui: Value of the initial y
-        :param vi: Value of the initial y'
-        :param done: Values that you want to evaluate in the diff system
-        :param h: Integration step
-        :return: Values of u and v
+        Solution of the second-order ordinary differential equation
+
+        Parameters
+        ----------
+        ti : Value of the initial t
+        ui : Value of the initial y
+        vi : Value of the initial y'
+        done : Values that you want to evaluate in the diff system
+        h : Integration step
+
+        Returns
+        -------
+        ui : Value of u
+        vi : Value of v
         """
 
         st = np.arange(ti, done, h)
@@ -196,9 +223,6 @@ class secondorder(object):
     def graph(self, *args, **kwargs):
         """
         Graph the function with the values obtained from each iteration
-        :param args:
-        :param kwargs:
-        :return:
         """
 
         plt.title("Graph of functions")
