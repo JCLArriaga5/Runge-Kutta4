@@ -7,9 +7,7 @@
 Fourth-order Runge Kutta method to solve ordinary differential equations (ODE's) given the initial conditions of the equation, to obtain the solution. The implementation can resolve first and second order ODEs.
 
 To solve the second order ODE's can be decomposed into a system of differential equations, as shown below.
-- y = u
-- du/dx = v
-- dv/dx = y"
+<p align="left"><img src="images/example_convert_2ode.png" height="110"></p>
 
 ## Installation
 <!-- ```sh
