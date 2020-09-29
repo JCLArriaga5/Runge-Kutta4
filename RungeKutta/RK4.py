@@ -123,8 +123,6 @@ class firstorder(object):
         self.ts = []
         self.ys = []
 
-        return self.ts, self.ys
-
 class secondorder(object):
     """
         Implementation of the method fourth order Runge Kutta, to obtain the value of a 2nd order differential

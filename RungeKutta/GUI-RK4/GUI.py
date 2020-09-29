@@ -154,7 +154,7 @@ class RungeKuttaGUI:
         self.canvas.get_tk_widget().place(x=600, y=120)
 
         # Clear values for next solutions
-        self.ts, self.ys = self.rk4.clearvalues()
+        self.rk4.clearvalues()
 
     def exit(self):
         """
