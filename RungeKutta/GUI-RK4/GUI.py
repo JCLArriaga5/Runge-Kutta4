@@ -18,6 +18,8 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
 from RungeKutta.RK4 import *
 import numpy as np
+import sympy
+(t, y, e) = sympy.symbols("t, y, e")
 
 
 class RungeKuttaGUI:
@@ -143,7 +145,7 @@ class RungeKuttaGUI:
         # Obtain values of solution
         self.ts, self.ys = self.rk4.graphvalues()
         self.ax.clear()
-        self.ax.set_title(r'Solution graph of $\frac{dy}{dt}$= %s' % self.equation.get())
+        self.ax.set_title(r'Solution graph of  $\frac{dy}{dt}= %s$' % sympy.latex(eval(self.equation.get())))
         self.ax.plot(self.ts, self.ys, 'r')
         self.ax.legend('y')
         self.ax.grid()
