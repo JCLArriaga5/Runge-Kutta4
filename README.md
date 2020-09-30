@@ -47,4 +47,4 @@ The following window will open.
 
 To see the default example, first click on `compute`. To see the solution graph press on the `Graph function` button, so that it is shown as in the following image.
 
-<p align="center"><img src="images/Runge_Kutta_4th_Order_Ubuntu.gif" height=""></p>
+<p align="center"><img src="images/Runge_Kutta_4th_Order_Window.gif" height=""></p>
