@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-class firstorder(object):
+class firstorder():
     """
     Implementation of the method fourth order Runge Kutta, to obtain the value of a differential equation given
     its initial conditions, obtain its graph and its table of values.
@@ -115,7 +115,7 @@ class firstorder(object):
 
         return self.ts, self.ys
 
-    def clearvalues(self):
+    def emptyvalues(self):
         """
         Clear all values of each iteration.
         """
@@ -123,7 +123,7 @@ class firstorder(object):
         self.ts = []
         self.ys = []
 
-class secondorder(object):
+class secondorder():
     """
         Implementation of the method fourth order Runge Kutta, to obtain the value of a 2nd order differential
         equation, given its initial conditions, obtain its graph.

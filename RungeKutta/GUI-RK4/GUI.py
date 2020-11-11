@@ -7,7 +7,7 @@ import sys
 import os
 
 if eval(sys.version[0]) < 3: # For check python version
-    raise ValueError('GUI Code requires Python3 or higher')
+    raise ValueError('GUI Code requires Python 3 or higher')
 else:
     from tkinter import *
 
@@ -16,7 +16,7 @@ dirpath = abspath.replace('/RungeKutta/GUI-RK4', '/')
 sys.path.append(dirpath)
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
-from RungeKutta.RK4 import *
+from RungeKutta.RK4 import firstorder
 import numpy as np
 import sympy
 (t, y, e) = sympy.symbols("t, y, e")
@@ -53,7 +53,7 @@ class RungeKuttaGUI:
         self.canvas.draw()
 
         # Initialize Runge-Kutta firstorder ode
-        self.rk4 = firstorder(self.f)
+        self.methd = firstorder(self.f)
         self.ts = 0
         self.ys = 0
 
@@ -67,7 +67,7 @@ class RungeKuttaGUI:
         label_equation = Label(master, text='Enter equation: dy/dt =', bg='#689E8C').place(x=110, y=80, width=180, height=40)
 
         self.equation = StringVar()
-        self.equation.set('2*t -3*y + 1')
+        self.equation.set('2*t - 3*y + 1')
         equantion_entry = Entry(master, width=12, textvariable=self.equation).place(x=290, y=80, width=150, height=40)
 
         self.label_parameters = Label(master, text='Parameters', bg='#476B5F').place(x=225, y=130, width=100, height=40)
@@ -133,7 +133,7 @@ class RungeKuttaGUI:
         """
 
         self.ax.clear()
-        computed = self.rk4.solve(np.double(self.ti.get()), np.double(self.yi.get()), np.double(self.done.get()),
+        computed = self.methd.solve(np.double(self.ti.get()), np.double(self.yi.get()), np.double(self.done.get()),
                                   np.double(self.h.get()))
         self.computed.set(computed)
 
@@ -143,7 +143,7 @@ class RungeKuttaGUI:
         """
         # Show in GUI
         # Obtain values of solution
-        self.ts, self.ys = self.rk4.graphvalues()
+        self.ts, self.ys = self.methd.graphvalues()
         self.ax.clear()
         self.ax.set_title(r'Solution graph of  $\frac{dy}{dt}= %s$' % sympy.latex(eval(self.equation.get())))
         self.ax.plot(self.ts, self.ys, 'r')
@@ -156,7 +156,7 @@ class RungeKuttaGUI:
         self.canvas.get_tk_widget().place(x=600, y=120)
 
         # Clear values for next solutions
-        self.rk4.clearvalues()
+        # self.methd.emptyvalues()
 
     def exit(self):
         """
