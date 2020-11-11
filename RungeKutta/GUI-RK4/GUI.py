@@ -12,7 +12,10 @@ else:
     from tkinter import *
 
 abspath = os.getcwd()
-dirpath = abspath.replace('/RungeKutta/GUI-RK4', '/')
+if sys.platform == 'linux' or 'darwin':
+    dirpath = abspath.replace('/RungeKutta/GUI-RK4', '/')
+if sys.platform == 'win32':
+    dirpath = abspath.replace('\\RungeKutta\\GUI-RK4', '\\')
 sys.path.append(dirpath)
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
