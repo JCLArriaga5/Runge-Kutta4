@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-#-*- coding: utf-8 -*-
+# !/usr/bin/python3
+# -*- coding: utf-8 -*-
 
 from __future__ import division
 import ctypes
@@ -17,6 +17,8 @@ if sys.platform == 'linux' or 'darwin':
 if sys.platform == 'win32':
     dirpath = abspath.replace('\\RungeKutta\\GUI-RK4', '\\')
 sys.path.append(dirpath)
+
+from PIL import Image, ImageTk
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
 from RungeKutta.RK4 import firstorder
@@ -35,6 +37,16 @@ class RungeKuttaGUI:
         master.config(bg=gui_bg)
         master.geometry("1200x600")
         master.resizable(width=FALSE, height=FALSE)
+
+        # Layout
+        # img_tmp = Image.open(abspath + '/images/layout-rk4.png')
+        # img_tmp = img_tmp.resize((1202, 602), Image.ANTIALIAS)
+        # layout_img = ImageTk.PhotoImage(img_tmp)
+        # lyout = Label(master, image=layout_img, bg=gui_bg)
+        # lyout.layout_img=layout_img
+        # lyout.place(x=-2, y=-2)
+        # Working ...
+
         # Detect OS for icon
         self.OS = sys.platform
         if self.OS == 'linux' or 'darwin':
