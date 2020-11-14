@@ -33,19 +33,20 @@ class RungeKuttaGUI:
         self.master = master
         gui_bg = "#4F5251"
 
+        # Layout
+        img_tmp = Image.open(abspath + '/images/layout-rk4.png')
+        img_tmp = img_tmp.resize((1202, 602), Image.ANTIALIAS)
+        layout_img = ImageTk.PhotoImage(img_tmp)
+        lyout = Label(master, image=layout_img, bg=gui_bg)
+        lyout.layout_img=layout_img
+        lyout.place(x=-2, y=-2)
+        # Working ...
+
         master.title("Runge Kutta 4th Order")
-        master.config(bg=gui_bg)
+        # master.config(bg=gui_bg)
         master.geometry("1200x600")
         master.resizable(width=FALSE, height=FALSE)
 
-        # Layout
-        # img_tmp = Image.open(abspath + '/images/layout-rk4.png')
-        # img_tmp = img_tmp.resize((1202, 602), Image.ANTIALIAS)
-        # layout_img = ImageTk.PhotoImage(img_tmp)
-        # lyout = Label(master, image=layout_img, bg=gui_bg)
-        # lyout.layout_img=layout_img
-        # lyout.place(x=-2, y=-2)
-        # Working ...
 
         # Detect OS for icon
         self.OS = sys.platform
@@ -61,7 +62,7 @@ class RungeKuttaGUI:
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         # Initialize graph parameters
-        self.fig = Figure(figsize=(5, 4), dpi=100, facecolor=gui_bg)
+        self.fig = Figure(figsize=(5.1, 4), dpi=100, facecolor=gui_bg)
         self.fig.clf()
         self.ax = self.fig.add_subplot(111, facecolor=gui_bg)
         self.canvas = FigureCanvasTkAgg(self.fig, self.master)
@@ -77,7 +78,7 @@ class RungeKuttaGUI:
         titletext.pack(side='top')
 
         titleODE = Label(master, text="Ordinary differential equations of the first order",
-                         bg=gui_bg, fg="white", font="time 12 bold").place(x=60, y=40)
+                         bg=gui_bg, fg="white", font="time 12 bold").place(x=90, y=40)
 
         label_equation = Label(master, text='Enter equation: dy/dt =', bg='#689E8C').place(x=110, y=80, width=180, height=40)
 
@@ -119,10 +120,10 @@ class RungeKuttaGUI:
 
         # Graph
         graph_label = Label(master, text='Graph the solution with respect to variable t',
-                            bg="#4F5251", fg="white", font="time 12 bold").place(x=700, y=40)
-        graph_button = Button(master, text='Graph Function', command=self.graph, relief='raised', bg='#989E9C').place(x=800, y=80, width=200, height=20)
+                            bg="#4F5251", fg="white", font="time 12 bold").place(x=680, y=40)
+        graph_button = Button(master, text='Graph Function', command=self.graph, relief='raised', bg='#989E9C').place(x=770, y=80, width=200, height=20)
 
-        self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=self.exit).place(x=1100, y=500, width=80, height=30)
+        self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black", command=self.exit).place(x=1100, y=550, width=80, height=30)
 
     # noinspection PyUnusedLocal
     def f(self, t, y):
@@ -168,7 +169,7 @@ class RungeKuttaGUI:
         self.ax.set_ylabel("$ y(t) $")
 
         self.canvas.draw()
-        self.canvas.get_tk_widget().place(x=600, y=120)
+        self.canvas.get_tk_widget().place(x=601, y=123)
 
         # Clear values for next solutions
         self.methd.emptyvalues()
