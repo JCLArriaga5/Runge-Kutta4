@@ -40,7 +40,7 @@ For examples of how to use the functions see this [file](../master/examples/test
 To run the GUI use the following commands inside the path where the repository was cloned
 ```sh
 :~/Runge-Kutta4$ cd RungeKutta/GUI-RK4/
-:~/Runge-Kutta4/RungeKutta/GUI-RK4$ python3 GUI.py
+:~/Runge-Kutta4/RungeKutta/GUI-RK4$ python GUI.py
 ```
 The following window will open.
 <p align="center"><img src="images/GUI-preview.png" height=""></p>
