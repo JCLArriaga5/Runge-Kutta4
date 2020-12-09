@@ -7,26 +7,46 @@ import numpy as np
 
 class firstorder():
     """
-    Implementation of the method fourth order Runge Kutta, to obtain the value of a differential equation given
-    its initial conditions, obtain its graph and its table of values.
+    Implementation of the method fourth order Runge Kutta, to obtain the value
+    of a differential equation given its initial conditions.
+
     The function receives equations of the form dy / dt = f(t,y)
-    Example:
+    ...
+
+    Attributes
+    ----------
+    function : def
+        function of the differential equation to solve
+
+    Methods
+    -------
+    solve(ti, yi, done, h):
+        Solve the ODE using RK4 and its initial values.
+
+    graph(*args, **kwargs):
+        Solution graph of each iteration.
+
+    graphvalues():
+        Return (t, y) values of each iteration.
+
+    Example
+    -------
         from RungeKutta.RK4 import firstorder
 
         def f(t, y):
             return 2*t -3*y + 1
         y = firstorder(f)
-        ► To get the solution given the initial conditions
+
+        To get the solution given the initial condition
         ti = 1
         yi = 5
         done = 1.5
         h = 0.1
         r = y.solve(ti, yi, done, h)
         print("dy/dt =", r)
-        ► To obtain the graph
+
+        To obtain the graph
         y.graph('r--', label = "Function y")
-        ► To get the table of values
-        y.table(lw = 2)
     """
 
     def __init__(self, function):
@@ -86,27 +106,27 @@ class firstorder():
         plt.ylabel("$ y(t) $")
         plt.show()
 
-    def table(self):
-        """
-        Show the obtained table of the values of each iteration.
-        """
-        data = []
-        for i in range(len(self.ts)):
-            data.append([self.ts[i], self.ys[i]])
-
-        color = plt.cm.GnBu(np.linspace(1, len(data)))
-        colLab = ('t', 'y')
-        plt.table(cellText=data, cellColours=None,
-                  cellLoc='center', colWidths=None,
-                  rowLabels=None, rowColours=None, rowLoc='center',
-                  colLabels=colLab, colColours=color, colLoc='center',
-                  loc='center', bbox=None)
-
-        ax = plt.gca()
-        ax.xaxis.set_visible(False)
-        ax.yaxis.set_visible(False)
-        plt.title("Value table")
-        plt.show()
+    # def table(self):
+    #     """
+    #     Show the obtained table of the values of each iteration.
+    #     """
+    #     data = []
+    #     for i in range(len(self.ts)):
+    #         data.append([self.ts[i], self.ys[i]])
+    #
+    #     color = plt.cm.GnBu(np.linspace(1, len(data)))
+    #     colLab = ('t', 'y')
+    #     plt.table(cellText=data, cellColours=None,
+    #               cellLoc='center', colWidths=None,
+    #               rowLabels=None, rowColours=None, rowLoc='center',
+    #               colLabels=colLab, colColours=color, colLoc='center',
+    #               loc='center', bbox=None)
+    #
+    #     ax = plt.gca()
+    #     ax.xaxis.set_visible(False)
+    #     ax.yaxis.set_visible(False)
+    #     plt.title("Value table")
+    #     plt.show()
 
     def graphvalues(self):
         """
@@ -125,38 +145,39 @@ class firstorder():
 
 class secondorder():
     """
-        Implementation of the method fourth order Runge Kutta, to obtain the value of a 2nd order differential
-        equation, given its initial conditions, obtain its graph.
-        The function receives equations converted into a system of equations of the form:
-        y = u
-        du/dx = v
-        dv/dx = y"
+    Implementation of the method fourth order Runge Kutta, to obtain the value of a 2nd order differential
+    equation, given its initial conditions, obtain its graph.
+    The function receives equations converted into a system of equations of the form:
+    y = u
+    du/dx = v
+    dv/dx = y"
 
-        du/dx = f(v)
-        dv/dx = g(v, u, t)
+    du/dx = f(v)
+    dv/dx = g(v, u, t)
 
-        Example:
-            from RungeKutta.RK4 import secondorder
-            from math import e
+    Example
+    -------
+        from RungeKutta.RK4 import secondorder
+        from math import e
 
-            def f(v):
-                return v
+        def f(v):
+            return v
 
-            def g(v, u, t):
-                return 4*v + 6*e**(3*t) - 3*e**(-t)
+        def g(v, u, t):
+            return 4*v + 6*e**(3*t) - 3*e**(-t)
 
-            rk = secondorder(f, g)
-            ► To get the solution given the initial conditions
-            ui = 1
-            vi = -1
-            ti = 0
-            h = 0.1
-            done = 1.5
-            r = rk.solve(ti, ui, vi, done, h)
-            print("u =", r[0])
-            print("v =", r[1])
-            ► To obtain the graph
-            rk.graph()
+        rk = secondorder(f, g)
+        ► To get the solution given the initial conditions
+        ui = 1
+        vi = -1
+        ti = 0
+        h = 0.1
+        done = 1.5
+        r = rk.solve(ti, ui, vi, done, h)
+        print("u =", r[0])
+        print("v =", r[1])
+        ► To obtain the graph
+        rk.graph()
         """
 
     def __init__(self, function1, function2):
