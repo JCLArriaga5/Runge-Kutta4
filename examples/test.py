@@ -18,35 +18,36 @@ def main():
     def f(t, y):
         return 2 * t - 3 * y + 1
 
+    y = firstorder(f)
+    ti = 1.0
+    yi = 5.0
+    t = 1.5
+    h = 0.01
+    r = y.solve(ti, yi, t, h)
+    print('ODE first order solution: y\' = 2t - 3y + 1')
+    print('y({}) = {}'.format(t, r))
+    print('Close window...')
+    y.graph('r--', label="Function y")
+
     # For 2nd Order ODE
-    def f1(v):
-        return v
+    def g(u):
+        return u
 
-    def g(v, u, t):
-        return 4 * v + 6 * e ** (3 * t) - 3 * e ** (-t)
+    def f(t, y, u):
+        return - t * u - y
 
-    r = firstorder(f)
-    ti = 1
-    yi = 5
-    done = 1.5
-    h = 0.1
-    resultado = r.solve(ti, yi, done, h)
-    print('ODE first order solution: 2 * t - 3 * y + 1')
-    print("dy/dt =", resultado)
+    rk = secondorder(f, g)
+    ti = 0.0
+    yi = 1.0
+    ui = 2.0
+    t = 0.2
+
+    y, u = rk.solve(ti, yi, ui, t, h)
+    print('ODE second order solution: y\'\' + ty\' + y = 0')
+    print('y({}) = {}'.format(t, y))
+    print('y\'({}) = {}'.format(t, u))
     print('Close window...')
-    r.graph('r--', label="Function y")
-
-    r2 = secondorder(f1, g)
-    u_i = 1
-    v_i = -1
-    t_i = 0
-
-    resultadosuv = r2.solve(t_i, u_i, v_i, done, h)
-    print('ODE second order solution: 4 * v + 6 * e ** (3 * t) - 3 * e ** (-t)')
-    print("u =", resultadosuv[0])
-    print("v =", resultadosuv[1])
-    print('Close window...')
-    r2.graph()
+    rk.graph()
 
 if __name__ == '__main__':
     main()
