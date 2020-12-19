@@ -5,22 +5,22 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-class firstorder():
+class firstorder:
     """
-    Implementation of the method fourth order Runge Kutta, to obtain the value
-    of a differential equation given its initial conditions.
+    Implementation of the Runge Kutta 4th method, to obtain the value
+    of a first order differential equation given its initial conditions.
+    -->  y' = f(t, y),   y(t0) = y0
 
-    The function receives equations of the form dy / dt = f(t,y)
     ...
 
     Attributes
     ----------
     function : def
-        function of the differential equation to solve
+        function of the differential equation to solve def f(t, y)
 
     Methods
     -------
-    solve(ti, yi, done, h):
+    solve(ti, yi, t, h):
         Solve the ODE using RK4 and its initial values.
 
     graph(*args, **kwargs):
@@ -31,22 +31,18 @@ class firstorder():
 
     Example
     -------
-        from RungeKutta.RK4 import firstorder
+    >>> from RungeKutta.RK4 import firstorder
+    >>> def f(t, y):
+    ...     return 2 * t - 3 * y + 1
+    >>> y = firstorder(f)
+    >>> ti = 1
+    >>> yi = 5
+    >>> t = 1.5
+    >>> h = 0.01
+    >>> r = y.solve(ti, yi, t, h)
+    >>> print("dy/dt =", r)
+    >>> y.graph('r--', label = "Function y")
 
-        def f(t, y):
-            return 2*t -3*y + 1
-        y = firstorder(f)
-
-        To get the solution given the initial condition
-        ti = 1
-        yi = 5
-        done = 1.5
-        h = 0.1
-        r = y.solve(ti, yi, done, h)
-        print("dy/dt =", r)
-
-        To obtain the graph
-        y.graph('r--', label = "Function y")
     """
 
     def __init__(self, function):
@@ -55,14 +51,14 @@ class firstorder():
 
         Parameters
         ----------
-        function : Function to solve
+        function : Function to solve f(t, y)
         """
 
         self.ts = []
         self.ys = []
         self.f = function
 
-    def solve(self, ti, yi, done, h):
+    def solve(self, ti, yi, t, h=0.001):
         """
         Solution of the first-order ordinary differential equation
 
@@ -70,15 +66,15 @@ class firstorder():
         ----------
         ti : Value of the initial t
         yi : Value of the initial y
-        done : Value that you want to evaluate in the equation
+        t : Value that you want to evaluate in the equation
         h : Integration step
 
         Return
         ------
-        yi : Value of the equation
+        yi : Value of y for t desired
         """
 
-        st = np.arange(ti, done, h)
+        st = np.arange(ti, t, h)
 
         for _ in st:
             K1 = self.f(ti, yi)
@@ -91,51 +87,35 @@ class firstorder():
 
             ti += h
             self.ts.append(ti)
+
         return yi
 
     def graph(self, *args, **kwargs):
         """
-        Graph the function with the values obtained from each iteration.
+        Solution Graph with values obtained from each iteration.
         """
 
-        plt.title("Graph of the function")
+        if len(self.ts) == 0 or len(self.ys) == 0:
+            raise ValueError('Need to solve first')
+
+        plt.title("Solution graph")
         plt.plot(self.ts, self.ys, *args, **kwargs)
-        plt.legend()
-        plt.grid()
+        plt.scatter(self.ts[len(self.ts) - 1], self.ys[len(self.ys) - 1],
+                    facecolor='k', s=50)
         plt.xlabel("$ t $")
         plt.ylabel("$ y(t) $")
+        plt.legend()
+        plt.grid()
         plt.show()
 
-    # def table(self):
-    #     """
-    #     Show the obtained table of the values of each iteration.
-    #     """
-    #     data = []
-    #     for i in range(len(self.ts)):
-    #         data.append([self.ts[i], self.ys[i]])
-    #
-    #     color = plt.cm.GnBu(np.linspace(1, len(data)))
-    #     colLab = ('t', 'y')
-    #     plt.table(cellText=data, cellColours=None,
-    #               cellLoc='center', colWidths=None,
-    #               rowLabels=None, rowColours=None, rowLoc='center',
-    #               colLabels=colLab, colColours=color, colLoc='center',
-    #               loc='center', bbox=None)
-    #
-    #     ax = plt.gca()
-    #     ax.xaxis.set_visible(False)
-    #     ax.yaxis.set_visible(False)
-    #     plt.title("Value table")
-    #     plt.show()
-
-    def graphvalues(self):
+    def get_vals(self):
         """
         Obtain the solution values of each iteration.
         """
 
         return self.ts, self.ys
 
-    def emptyvalues(self):
+    def empty_vals(self):
         """
         Clear all values of each iteration.
         """
@@ -143,42 +123,59 @@ class firstorder():
         self.ts = []
         self.ys = []
 
-class secondorder():
+class secondorder:
     """
-    Implementation of the method fourth order Runge Kutta, to obtain the value of a 2nd order differential
-    equation, given its initial conditions, obtain its graph.
-    The function receives equations converted into a system of equations of the form:
-    y = u
-    du/dx = v
-    dv/dx = y"
+    Implementation of the Runge Kutta 4th method, to obtain the value of a 2nd
+    order differential equation, given its initial conditions, obtain its graph.
 
-    du/dx = f(v)
-    dv/dx = g(v, u, t)
+    Second Order ODE's in form:
+    --> y'' = f(t, y, y'), y(t0) = y0, y'(t0) = u0
+
+    It can be expressed as an initial value problem for a system of first-order
+    differential equations. If  y' = u, the second-order differential equation
+    becomes in the system:
+    y' = u
+    u' = f(t, y, u)
+
+    ...
+
+    Attributes
+    ----------
+    function1 : def
+        Function that depends to t, y, u, def f(t, y, u)
+    function2 : def
+        Function that depends to u, def g(u)
+
+    Methods
+    -------
+    def solve:
+        Solve the second-order differential equation using RK4
+    def graph:
+        Solution Graph with values obtained from each iteration.
 
     Example
     -------
-        from RungeKutta.RK4 import secondorder
-        from math import e
+    y'' + ty' + y = 0, y(0) = 1, y'(0) = 2
+    First leave in terms of y' = u:
+        y' = u
+        u' + tu + y = 0
+        u' = - tu - y
 
-        def f(v):
-            return v
+    >>> from RungeKutta.RK4 import secondorder
+    >>> def g(u):
+    ...     return u
+    >>> def f(t, y, u):
+    ...     return - t * u - y
+    >>> rk = secondorder(f, g)
+    >>> ti = 0.0
+    >>> yi = 1.0
+    >>> ui = 2.0
+    >>> t = 0.2
+    >>> h = 0.01
+    >>> y, u = rk.solve(ti, yi, ui, t, h)
+    >>> print('The values of y({}) = {} and y\'({}) = {}'.format(t, y, t, u))
 
-        def g(v, u, t):
-            return 4*v + 6*e**(3*t) - 3*e**(-t)
-
-        rk = secondorder(f, g)
-        ► To get the solution given the initial conditions
-        ui = 1
-        vi = -1
-        ti = 0
-        h = 0.1
-        done = 1.5
-        r = rk.solve(ti, ui, vi, done, h)
-        print("u =", r[0])
-        print("v =", r[1])
-        ► To obtain the graph
-        rk.graph()
-        """
+    """
 
     def __init__(self, function1, function2):
         """
@@ -186,105 +183,85 @@ class secondorder():
 
         Parameters
         ----------
-        function1 : Function that depends on v (f(v))
-        function2 : Function that depends on v, u, t (g(v, u, t))
+        function1 : Function that depends to t, y, u, def f(t, y, u)
+        function2 : Function that depends to u, def g(u)
+
         """
 
         self.f = function1
         self.g = function2
         self.ts = []
+        self.ys = []
         self.us = []
-        self.vs = []
 
-    def solve(self, ti, ui, vi, done, h):
+    def solve(self, ti, yi, ui, t, h=0.001):
         """
         Solution of the second-order ordinary differential equation
 
         Parameters
         ----------
         ti : Value of the initial t
-        ui : Value of the initial y
-        vi : Value of the initial y'
-        done : Values that you want to evaluate in the diff system
+        yi : Value of the initial y
+        ui : Value of the initial y'
+        t : Value that you want to evaluate in the diff system
         h : Integration step
 
         Returns
         -------
-        ui : Value of u
-        vi : Value of v
+        yi : Value of y for the t desired
+        ui : Value of y' for the t desired
         """
 
-        st = np.arange(ti, done, h)
+        st = np.arange(ti, t, h)
 
         for _ in st:
-            K1 = self.f(vi)
-            m1 = self.g(vi, ui, ti)
+            m1 = self.g(ui)
+            k1 = self.f(ti, yi, ui)
 
-            K2 = self.f(vi + m1 * h / 2)
-            m2 = self.g(vi + m1 * h / 2, ui + K1 * h / 2, ti + h / 2)
+            m2 = self.g(ui + k1 * h / 2)
+            k2 = self.f(ti + h / 2, yi + m1 * h / 2, ui + k1 * h / 2)
 
-            K3 = self.f(vi + m2 * h / 2)
-            m3 = self.g(vi + m2 * h / 2, ui + K2 * h / 2, ti + h / 2)
+            m3 = self.g(ui + k2 * h / 2)
+            k3 = self.f(ti + h / 2, yi + m2 * h / 2, ui + k2 * h / 2)
 
-            K4 = self.f(vi + m3 * h)
-            m4 = self.g(vi + m3 * h, ui + K3 * h, ti + h)
+            m4 = self.g(ui + k3 * h)
+            k4 = self.f(ti + h, yi + m3 * h, ui + k3 * h)
 
-            ui += (h / 6) * (K1 + 2 * K2 + 2 * K3 + K4)
+            yi += (h / 6) * (m1 + 2 * (m2 + m3) + m4)
+            self.ys.append(yi)
+
+            ui += (h / 6) * (k1 + 2 * (k2 + k3) + k4)
             self.us.append(ui)
-
-            vi += (h / 6) * (m1 + 2 * m2 + 2 * m3 + m4)
-            self.vs.append(vi)
 
             ti += h
             self.ts.append(ti)
-        return ui, vi
+
+        return yi, ui
 
     def graph(self, *args, **kwargs):
         """
-        Graph the function with the values obtained from each iteration
+        Solution Graph with values obtained from each iteration.
         """
 
         plt.title("Graph of functions")
-        plt.plot(self.ts, self.us, label="u", *args, **kwargs)
-        plt.plot(self.ts, self.vs, label="v", *args, **kwargs)
+        plt.plot(self.ts, self.ys, label="y", *args, **kwargs)
+        plt.plot(self.ts, self.us, label="y'", *args, **kwargs)
         plt.legend()
         plt.grid()
         plt.xlabel("$ t $")
-        plt.ylabel("$ u:v $")
+        plt.ylabel("$ y(t) : y'(t) $")
         plt.show()
 
 if __name__ == "__main__":
     def f(t, y):
         return 2 * t - 3 * y + 1
 
-    rk = firstorder(f)
+    y = firstorder(f)
 
-    t_i = 1
-    y_i = 5
-    end = 1.5
-    sh = 0.1
-    r = rk.solve(t_i, y_i, end, sh)
-    print("dy/dt =", r)
-    rk.graph('r--', label="Function y")
-
-# if __name__ == "__main__":
-#     from math import e
-#
-#     def f(v):
-#         return v
-#
-#     def g(v, u, t):
-#         return 4*v + 6*e**(3*t) - 3*e**(-t)
-#
-#     u_i = 1
-#     v_i = -1
-#     t_i = 0
-#     sh = 0.1
-#     end = 1.5
-#
-#     rk = RK(f, g)
-#
-#     r = rk.solve(t_i, u_i, v_i, end, sh)
-#     print("u =", r[0])
-#     print("v =", r[1])
-#     rk.graph()
+    ti = 1.0
+    yi = 5.0
+    t = 1.5
+    h = 0.01
+    r = y.solve(ti, yi, t, h)
+    print("y({}) = {}".format(t, r))
+    y.graph('r--', label="Solution curve")
