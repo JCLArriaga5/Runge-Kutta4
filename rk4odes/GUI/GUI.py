@@ -7,55 +7,37 @@ import sys
 import os
 
 if eval(sys.version[0]) < 3: # For check python version
-    raise ValueError('GUI Code requires Python 3 or higher')
+    raise ValueError('GUI code requires python3 or higher')
 else:
     from tkinter import *
-
-abspath = os.getcwd()
-if sys.platform == 'linux' or 'darwin':
-    dirpath = abspath.replace('/RungeKutta/GUI-RK4', '/')
-if sys.platform == 'win32':
-    dirpath = abspath.replace('\\RungeKutta\\GUI-RK4', '\\')
-sys.path.append(dirpath)
+sys.path.append("..")
 
 from PIL import Image, ImageTk
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
-from RungeKutta.RK4 import firstorder
+from rk4 import firstorder
 import numpy as np
 import sympy
 (t, y, e) = sympy.symbols("t, y, e")
 
-
-class RK4GUI:
+class GUI:
     def __init__(self, master):
         # Window design
         self.master = master
         gui_bg = "#4F5251"
-
-        # Layout
-        # img_tmp = Image.open(abspath + '/images/layout-rk4.png')
-        # img_tmp = img_tmp.resize((1202, 602), Image.ANTIALIAS)
-        # layout_img = ImageTk.PhotoImage(img_tmp)
-        # lyout = Label(master, image=layout_img, bg=gui_bg)
-        # lyout.layout_img=layout_img
-        # lyout.place(x=-2, y=-2)
-        # --> Working ...
-
         master.title("Runge Kutta 4th Order")
         master.config(bg=gui_bg)
         master.geometry("1200x600")
         master.resizable(width=FALSE, height=FALSE)
 
-
         # Detect OS for icon
         self.OS = sys.platform
         if self.OS == 'linux' or 'darwin':
-            icon = PhotoImage(file=abspath + '/images/RK4-logo.png')
+            icon = PhotoImage(file='images/RK4-logo.png')
             master.tk.call('wm', 'iconphoto', master._w, icon)
         if self.OS == 'win32':
             # For Windows system show icon
-            master.wm_iconbitmap(default=abspath + '/images/RK4-logo.ico')
+            master.wm_iconbitmap(default='images/RK4-logo.ico')
             myappid = 'Isa-Carlos.RungeKutta.RK4.1-1'  # arbitrary string
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
@@ -188,7 +170,7 @@ class RK4GUI:
 
 def main():
     root = Tk()
-    rk = RK4GUI(root)
+    rk = GUI(root)
     root.mainloop()
 
 if __name__ == '__main__':

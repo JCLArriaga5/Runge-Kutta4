@@ -19,6 +19,6 @@ setup(
     url='https://github.com/JCLArriaga5/Runge-Kutta4',
     license='MIT',
     install_requires=required,
-    packages=['RungeKutta'],
+    packages=['rk4odes'],
     include_package_data=True,
 )
