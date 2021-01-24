@@ -9,7 +9,7 @@ Fourth-order Runge Kutta method to solve ordinary differential equations (ODE's)
 To solve the second order ODE's can be decomposed into a system of differential equations, as shown below.
 <p align="left"><img src="images/example_convert_2ode.png" height="110"></p>
 
-## Installation
+## Use the repository
 <!-- ```sh
 $ python -m pip install git+https://github.com/JCLArriaga5/Runge-Kutta4.git
 ``` -->
@@ -27,24 +27,23 @@ sudo apt-get install python3-tk
 ```
 
 ## Examples
-For examples of how to use the functions see this [file](../master/examples/test.py), run the test:
+For examples of how to use the functions see this [file](../master/rk4odes/test.py), run the test:
 ```sh
-:~/Runge-Kutta4$ cd examples/
-:~/Runge-Kutta4/examples$ python test.py
+:~/Runge-Kutta4$ cd rk4odes/
+:~/Runge-Kutta4/rk4odes$ python test.py
 ```
 
 ## GUI for first-order ODE's
 <span style="color:red">Note: GUI needs Python 3 or higher</span>
 
-
 To run the GUI use the following commands inside the path where the repository was cloned
 ```sh
-:~/Runge-Kutta4$ cd RungeKutta/GUI-RK4/
-:~/Runge-Kutta4/RungeKutta/GUI-RK4$ python GUI.py
+:~/Runge-Kutta4$ cd rk4odes/GUI/
+:~/Runge-Kutta4/rk4odes/GUI$ python GUI.py
 ```
 The following window will open.
 <p align="center"><img src="images/GUI-preview.png" height=""></p>
 
-To see the default example, first click on `compute`. To see the solution graph press on the `Graph function` button, so that it is shown as in the following image.
+To see the default example, first click on `compute`. To see the solution graph press on the `Graph` button, so that it is shown as in the following image.
 
 <p align="center"><img src="images/Runge_Kutta_4th_Order_Window.gif" height=""></p>
