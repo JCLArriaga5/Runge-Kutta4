@@ -15,6 +15,7 @@ sys.path.append("..")
 from PIL import Image, ImageTk
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from matplotlib.figure import Figure
+import matplotlib.image as mpimg
 from rk4 import firstorder
 import numpy as np
 import sympy
@@ -42,10 +43,11 @@ class GUI:
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         # Initialize graph parameters
-        self.fig = Figure(figsize=(5.1, 4), dpi=100, facecolor=gui_bg)
+        self.fig = Figure(figsize=(7, 4), dpi=110, facecolor=gui_bg)
         self.fig.clf()
         self.ax = self.fig.add_subplot(111, facecolor=gui_bg)
         self.canvas = FigureCanvasTkAgg(self.fig, self.master)
+        self.canvas.get_tk_widget().place(x=450, y=100)
         self.canvas.draw()
 
         titletext = Label(master, text="Runge Kutta 4th Order",
@@ -58,6 +60,7 @@ class GUI:
         label_equation = Label(master, text='Enter equation: dy/dt =',
                                bg='#689E8C').place(x=110, y=80, width=180, height=40)
 
+        self.ts = self.ys = []
         self.equation = StringVar()
         self.equation.set('2 * t - 3 * y + 1')
         equantion_entry = Entry(master, width=12,
@@ -132,10 +135,10 @@ class GUI:
 
     def solve(self):
         """
-        To use the -solve- function of RK4 and solve the equation that was entered in the GUI
+        To use the -solve- function of RK4 and solve the equation that was
+        entered in the GUI
         """
 
-        self.ax.clear()
         # Initialize Runge-Kutta firstorder ode
         methd = firstorder(self.f)
         r = methd.solve(np.double(self.ti.get()), np.double(self.yi.get()),
@@ -149,16 +152,21 @@ class GUI:
         Graph values of each iteration of method
         """
 
+        if len(self.ts) == 0 or len(self.ts) == 0:
+            raise ValueError('You need to press computed first')
+
         self.ax.clear()
-        self.ax.set_title(r'Solution graph of  $\frac{dy}{dt}= %s$' % sympy.latex(eval(self.equation.get())))
-        self.ax.plot(self.ts, self.ys, 'r')
-        # self.ax.legend('Solution curve')
+        self.ax.set_title(r'ODE: $\frac{dy}{dt}= %s$' % sympy.latex(eval(self.equation.get())))
+        self.ax.plot(self.ts, self.ys, '--r', label='Solution curve')
+        yevalxstr = r'$ y({}) $'.format(self.t.get())
+        self.ax.scatter(self.ts[len(self.ts) - 1], self.ys[len(self.ys) - 1],
+                        facecolor='k', label=yevalxstr)
+        self.ax.legend()
         self.ax.grid()
         self.ax.set_xlabel("$ t $")
-        self.ax.set_ylabel("$ y(t) $")
+        self.ax.set_ylabel("$ y(t) $", rotation='horizontal', fontsize='large')
 
         self.canvas.draw()
-        self.canvas.get_tk_widget().place(x=601, y=123)
 
     def exit(self):
         """
