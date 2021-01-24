@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import sys
-import os
-
-abspath = os.getcwd()
-if sys.platform == 'linux' or 'darwin':
-    dirpath = abspath.replace('/examples', '/')
-if sys.platform == 'win32':
-    dirpath = abspath.replace('\\examples', '\\')
-sys.path.append(dirpath)
-
-from RungeKutta.RK4 import *
+from rk4 import *
 from math import e
 
 def main():
