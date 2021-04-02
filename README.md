@@ -33,6 +33,17 @@ For examples of how to use the functions see this [file](../master/rk4odes/test.
 :~/Runge-Kutta4/rk4odes$ python test.py
 ```
 
+You can enter the equation function in two ways:
+- ```python
+  def f(t, y):
+      return 2 * t - 3 * y + 1
+
+  y = firstorder(f)
+  ```
+- ```python
+  y = firstorder('2 * t - 3 * y + 1')
+  ```
+
 ## GUI for first-order ODE's
 <span style="color:red">Note: GUI needs Python 3 or higher</span>
 
