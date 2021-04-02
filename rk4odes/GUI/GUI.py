@@ -110,21 +110,6 @@ class GUI:
         self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black",
                                    command=self.exit).place(x=1100, y=550, width=80, height=30)
 
-    def f(self, t, y):
-        """
-        Declare function to solve in the RK4 library format.
-
-        Parameters
-        ----------
-        t : Variable needed for the function imported from RK4.
-        y : Variable needed for the function imported from RK4.
-
-        Return
-        ------
-        Evaluation of the function entered in the GUI to be solved.
-        """
-
-        return eval(self.equation.get())
 
     def solve(self):
         """
@@ -133,7 +118,7 @@ class GUI:
         """
 
         # Initialize Runge-Kutta firstorder ode
-        methd = firstorder(self.f)
+        methd = firstorder(self.equation.get())
         r = methd.solve(np.double(self.ti.get()), np.double(self.yi.get()),
                         np.double(self.t.get()), np.double(self.h.get()))
         # Obtain values of solution
