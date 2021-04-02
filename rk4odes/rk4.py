@@ -74,15 +74,13 @@ class firstorder:
         yi : Value of y for t desired
         """
 
-        st = np.arange(ti, t, h)
-
-        for _ in st:
+        for _ in np.arange(ti, t, h):
             K1 = self.f(ti, yi)
             K2 = self.f(ti + h / 2, yi + K1 * h / 2)
             K3 = self.f(ti + h / 2, yi + K2 * h / 2)
             K4 = self.f(ti + h, yi + K3 * h)
 
-            yi += (h / 6) * (K1 + 2 * K2 + 2 * K3 + K4)
+            yi += (h / 6) * (K1 + 2 * (K2 + K3) + K4)
             self.ys.append(yi)
 
             ti += h
@@ -177,19 +175,19 @@ class secondorder:
 
     """
 
-    def __init__(self, function1, function2):
+    def __init__(self, fcn1, fcn2):
         """
         Constructor
 
         Parameters
         ----------
-        function1 : Function that depends to t, y, u, def f(t, y, u)
-        function2 : Function that depends to u, def g(u)
+        fcn1 : Function that depends to t, y, u, def f(t, y, u)
+        fcn2 : Function that depends to u, def g(u)
 
         """
 
-        self.f = function1
-        self.g = function2
+        self.f = fcn1
+        self.g = fcn2
         self.ts = []
         self.ys = []
         self.us = []
@@ -212,9 +210,7 @@ class secondorder:
         ui : Value of y' for the t desired
         """
 
-        st = np.arange(ti, t, h)
-
-        for _ in st:
+        for _ in np.arange(ti, t, h):
             m1 = self.g(ui)
             k1 = self.f(ti, yi, ui)
 
