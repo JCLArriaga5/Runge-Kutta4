@@ -4,6 +4,13 @@ from __future__ import division
 import matplotlib.pyplot as plt
 import numpy as np
 
+def str2def(str):
+    "Make function <string> to <def> for format in RK4 iterations"
+
+    def f(t, y):
+        return eval(str)
+
+    return f
 
 class firstorder:
     """
@@ -45,7 +52,7 @@ class firstorder:
 
     """
 
-    def __init__(self, function):
+    def __init__(self, fcn):
         """
         Constructor
 
@@ -56,7 +63,12 @@ class firstorder:
 
         self.ts = []
         self.ys = []
-        self.f = function
+        if not callable(fcn):
+            self.f = str2def(fcn)
+        elif callable(fcn):
+            self.f = fcn
+        else:
+            raise ValueError("fcn is not <def> or <str>")
 
     def solve(self, ti, yi, t, h=0.001):
         """
@@ -186,8 +198,20 @@ class secondorder:
 
         """
 
-        self.f = fcn1
-        self.g = fcn2
+        if not callable(fcn1):
+            self.f = str2def(fcn1)
+        elif callable(fcn1):
+            self.f = fcn1
+        else:
+            raise ValueError("fcn1 is not <def> or <str>")
+
+        if not callable(fcn2):
+            self.g = str2def(fcn2)
+        elif callable(fcn2):
+            self.g = fcn2
+        else:
+            raise ValueError("fcn1 is not <def> or <str>")
+        
         self.ts = []
         self.ys = []
         self.us = []
@@ -249,10 +273,7 @@ class secondorder:
         plt.show()
 
 if __name__ == "__main__":
-    def f(t, y):
-        return 2 * t - 3 * y + 1
-
-    y = firstorder(f)
+    y = firstorder('2 * t - 3 * y + 1')
 
     ti = 1.0
     yi = 5.0
