@@ -5,9 +5,23 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def str2def(str):
-    "Make function <string> to <def> for format in RK4 iterations"
+    """
+    Make function <string> to <def> for format in RK4 iterations.
+
+    Example
+    -------
+    >>> fcn = '2 * t - 3 * y + 1'
+    >>> fcn = str2def(fcn)
+    >>> type(fcn)
+    function
+    >>>
+
+    """
 
     def f(t, y):
+        """
+        To evaluate equation with varibles (t, y).
+        """
         return eval(str)
 
     return f
@@ -58,12 +72,12 @@ class firstorder:
 
         Parameters
         ----------
-        function : Function to solve f(t, y)
+        fcn : Function to solve f(t, y)
         """
 
         self.ts = []
         self.ys = []
-        if not callable(fcn):
+        if not callable(fcn) and type(fcn) is str:
             self.f = str2def(fcn)
         elif callable(fcn):
             self.f = fcn
@@ -198,20 +212,20 @@ class secondorder:
 
         """
 
-        if not callable(fcn1):
+        if not callable(fcn1) and type(fcn1) is str:
             self.f = str2def(fcn1)
         elif callable(fcn1):
             self.f = fcn1
         else:
             raise ValueError("fcn1 is not <def> or <str>")
 
-        if not callable(fcn2):
+        if not callable(fcn2) and type(fcn2) is str:
             self.g = str2def(fcn2)
         elif callable(fcn2):
             self.g = fcn2
         else:
-            raise ValueError("fcn1 is not <def> or <str>")
-        
+            raise ValueError("fcn2 is not <def> or <str>")
+
         self.ts = []
         self.ys = []
         self.us = []
