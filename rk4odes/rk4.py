@@ -211,21 +211,9 @@ class secondorder:
         fcn2 : Function that depends to u, def g(u)
 
         """
-
-        if not callable(fcn1) and type(fcn1) is str:
-            self.f = str2def(fcn1)
-        elif callable(fcn1):
-            self.f = fcn1
-        else:
-            raise ValueError("fcn1 is not <def> or <str>")
-
-        if not callable(fcn2) and type(fcn2) is str:
-            self.g = str2def(fcn2)
-        elif callable(fcn2):
-            self.g = fcn2
-        else:
-            raise ValueError("fcn2 is not <def> or <str>")
-
+        
+        self.f = fcn1
+        self.g = fcn2
         self.ts = []
         self.ys = []
         self.us = []
