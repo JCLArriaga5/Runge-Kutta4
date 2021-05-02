@@ -125,7 +125,9 @@ class firstorder:
         plt.title("Solution graph")
         plt.plot(self.ts, self.ys, *args, **kwargs)
         plt.scatter(self.ts[len(self.ts) - 1], self.ys[len(self.ys) - 1],
-                    facecolor='k', s=50)
+                    facecolor='k', s=50,
+                    label='y({})={}'.format(round(self.ts[len(self.ts) - 1], 4),
+                    self.ys[len(self.ys) - 1]))
         plt.xlabel("$ t $")
         plt.ylabel("$ y(t) $")
         plt.legend()
@@ -211,7 +213,7 @@ class secondorder:
         fcn2 : Function that depends to u, def g(u)
 
         """
-        
+
         self.f = fcn1
         self.g = fcn2
         self.ts = []
@@ -266,12 +268,12 @@ class secondorder:
         """
 
         plt.title("Graph of functions")
-        plt.plot(self.ts, self.ys, label="y", *args, **kwargs)
-        plt.plot(self.ts, self.us, label="y'", *args, **kwargs)
+        plt.plot(self.ts, self.ys, label="$y(t)$", *args, **kwargs)
+        plt.plot(self.ts, self.us, label="$y'(t)$", *args, **kwargs)
         plt.legend()
         plt.grid()
         plt.xlabel("$ t $")
-        plt.ylabel("$ y(t) : y'(t) $")
+        plt.ylabel("$ y \quad | \quad y'$")
         plt.show()
 
 if __name__ == "__main__":
