@@ -24,18 +24,20 @@ class GUI:
     def __init__(self, master):
         # Window design
         self.master = master
-        master.title("Runge Kutta 4th Order")
-        master.config(bg='#4F5251')
-        master.geometry("1200x600+80+80")
-        master.resizable(width=FALSE, height=FALSE)
+        self.master.title("Runge Kutta 4th Order")
+        self.master.config(bg='#4F5251')
+        self.master.resizable(width=False, height=False)
+        self.master.geometry("1200x600+80+80")
 
         # Detect OS for icon
         self.OS = sys.platform
         if self.OS == 'linux' or 'darwin':
-            master.tk.call('wm', 'iconphoto', master._w, PhotoImage(file='images/RK4-logo.png'))
+            self.master.tk.call('wm', 'iconphoto', master._w,
+                                PhotoImage(file='images/RK4-logo.png'))
         if self.OS == 'win32':
-            master.tk.call('wm', 'iconphoto', master._w, PhotoImage(file='images/RK4-logo.png'))
-            master.iconbitmap('images/RK4-logo.ico')
+            self.master.tk.call('wm', 'iconphoto', master._w,
+                                PhotoImage(file='images/RK4-logo.png'))
+            self.master.iconbitmap('images/RK4-logo.ico')
 
         # Initialize graph parameters
         self.fig = Figure(figsize=(7, 4), dpi=110, facecolor='#4F5251')
@@ -56,58 +58,59 @@ class GUI:
                                bg='#689E8C').place(x=110, y=80, width=180, height=40)
 
         self.ts = self.ys = []
-        self.equation = StringVar()
-        self.equation.set('2 * t - 3 * y + 1')
-        equantion_entry = Entry(master, width=12, justify='center',
-                                textvariable=self.equation).place(x=290, y=80, width=150, height=40)
+        self.eqn = StringVar()
+        self.eqn.set('2 * t - 3 * y + 1')
+        eqn_entry = Entry(self.master, width=12, justify='center',
+                                textvariable=self.eqn).place(x=290, y=80, width=150, height=40)
 
-        self.label_parameters = Label(master, text='Parameters',
+        self.label_parameters = Label(self.master, text='Parameters',
                                       bg='#476B5F').place(x=225, y=130, width=100, height=40)
 
         # ti parameter
-        self.label_ti = Label(master, text='ti :',
+        self.label_ti = Label(self.master, text='ti :',
                               bg='#689E8C').place(x=110, y=170, width=40, height=25)
         self.ti = DoubleVar()
         self.ti.set('1.0')
-        self.entry_ti = Entry(master, width=7, justify='center',
+        entry_ti = Entry(self.master, width=7, justify='center',
                               textvariable=self.ti).place(x=150, y=170, width=40, height=25)
 
         # yi parameter
-        self.label_yi = Label(master, text='yi :',
+        self.label_yi = Label(self.master, text='yi :',
                               bg='#689E8C').place(x=190, y=170, width=40, height=25)
         self.yi = DoubleVar()
         self.yi.set('5.0')
-        self.entry_yi = Entry(master, width=7, justify='center',
+        entry_yi = Entry(self.master, width=7, justify='center',
                               textvariable=self.yi).place(x=220, y=170, width=40, height=25)
 
         # t parameter
-        self.label_t = Label(master, text='t :',
+        self.label_t = Label(self.master, text='t :',
                              bg='#689E8C').place(x=260, y=170, width=40, height=25)
         self.t = DoubleVar()
         self.t.set('1.5')
-        self.entry_t = Entry(master, width=7, justify='center',
+        entry_t = Entry(self.master, width=7, justify='center',
                              textvariable=self.t).place(x=300, y=170, width=40, height=25)
 
         # h parameter
-        self.label_h = Label(master, text='h :', bg='#689E8C').place(x=340, y=170, width=40, height=25)
+        self.label_h = Label(self.master, text='h :',
+                             bg='#689E8C').place(x=340, y=170, width=40, height=25)
         self.h = DoubleVar()
         self.h.set('0.01')
-        self.entry_h = Entry(master, width=7, justify='center',
+        entry_h = Entry(self.master, width=7, justify='center',
                              textvariable=self.h).place(x=380, y=170, width=40, height=25)
 
         # computed
-        compute = Button(master, text='Compute', command=self.solve, relief='raised', bd=4,
+        compute = Button(self.master, text='Compute', command=self.solve, relief='raised', bd=4,
                          bg='#989E9C').place(x=180, y=200, width=80, height=30)
 
         self.computed = DoubleVar()
-        self.label_computed = Label(master, textvariable=self.computed,
+        self.label_computed = Label(self.master, textvariable=self.computed,
                                     width=20).place(x=260, y=200, width=150, height=30)
 
         # Graph
-        graph_button = Button(master, text='Graph', command=self.graph,
+        graph_button = Button(self.master, text='Graph', command=self.graph,
                               relief='raised', bd=4, bg='#989E9C').place(x=770, y=80, width=200, height=20)
 
-        self.button_close = Button(master, text='Close', bg='#E1EBE7', fg="black",
+        self.button_close = Button(self.master, text='Close', bg='#E1EBE7', fg="black",
                                    command=self.exit).place(x=1100, y=550, width=80, height=30)
 
 
@@ -118,7 +121,7 @@ class GUI:
         """
 
         # Initialize Runge-Kutta firstorder ode
-        methd = firstorder(self.equation.get())
+        methd = firstorder(self.eqn.get())
         r = methd.solve(np.double(self.ti.get()), np.double(self.yi.get()),
                         np.double(self.t.get()), np.double(self.h.get()))
         # Obtain values of solution
