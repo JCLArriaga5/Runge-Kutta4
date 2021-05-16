@@ -10,6 +10,7 @@ if eval(sys.version[0]) < 3: # For check python version
     raise ValueError('GUI code requires python3 or higher')
 else:
     from tkinter import *
+    from tkinter import messagebox
 sys.path.append("..")
 
 from PIL import Image, ImageTk
@@ -134,7 +135,8 @@ class GUI:
         """
 
         if len(self.ts) == 0 or len(self.ts) == 0:
-            raise ValueError('You need to press computed first')
+            # raise ValueError('You need to press computed first')
+            messagebox.showerror('Error', 'You need to press computed first')
 
         self.ax.clear()
         self.ax.set_title('Solution graph')
