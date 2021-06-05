@@ -4,7 +4,7 @@ from __future__ import division
 import matplotlib.pyplot as plt
 import numpy as np
 
-def str2def(str):
+def str2def(eqn):
     """
     Make function <string> to <def> for format in RK4 iterations.
 
@@ -15,14 +15,16 @@ def str2def(str):
     >>> type(fcn)
     function
     >>>
-
     """
+
+    if type(eqn) is not str:
+        raise ValueError('Input must be string')
 
     def f(t, y):
         """
         To evaluate equation with varibles (t, y).
         """
-        return eval(str)
+        return eval(eqn)
 
     return f
 
