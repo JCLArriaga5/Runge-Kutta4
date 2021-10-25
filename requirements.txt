@@ -3,3 +3,4 @@ sympy
 cPython
 matplotlib
 pillow
+numexpr
