@@ -3,6 +3,7 @@
 from __future__ import division
 import matplotlib.pyplot as plt
 import numpy as np
+import ast
 
 def str2def(eqn):
     """
@@ -18,7 +19,7 @@ def str2def(eqn):
     """
 
     if type(eqn) is not str:
-        raise ValueError('Input must be string')
+        raise ValueError('Input must be string' )
 
     def f(t, y):
         """
@@ -86,6 +87,39 @@ class firstorder:
         else:
             raise ValueError("fcn is not <def> or <str>")
 
+    @staticmethod
+    def rk4(f, ti, yi, t, h):
+        """
+        Runge-Kutta 4th Order Method for first order ODE
+
+        Parameters
+        ----------
+        f : def
+            function of the differential equation to solve def f(t, y)
+        ti : Value of the initial t
+        yi : Value of the initial y
+        t : Value that you want to evaluate in the equation
+        h : Integration step
+
+        Return
+        ------
+        yi : list
+            List of "y" values of each iteration
+        ti : list
+            List of "t" values of each iteration
+        """
+
+        for _ in np.arange(ti, t, h):
+            k1 = f(ti, yi)
+            k2 = f(ti + h / 2, yi + k1 * h / 2)
+            k3 = f(ti + h / 2, yi + k2 * h / 2)
+            k4 = f(ti + h, yi + k3 * h)
+
+            yi += (h / 6) * (k1 + 2 * (k2 + k3) + k4)
+            ti += h
+
+            yield yi, ti
+
     def solve(self, ti, yi, t, h=0.001):
         """
         Solution of the first-order ordinary differential equation
@@ -99,22 +133,16 @@ class firstorder:
 
         Return
         ------
-        yi : Value of y for t desired
+        y : Value of "y" for "t" desired
         """
 
-        for _ in np.arange(ti, t, h):
-            K1 = self.f(ti, yi)
-            K2 = self.f(ti + h / 2, yi + K1 * h / 2)
-            K3 = self.f(ti + h / 2, yi + K2 * h / 2)
-            K4 = self.f(ti + h, yi + K3 * h)
+        self.empty_vals()
 
-            yi += (h / 6) * (K1 + 2 * (K2 + K3) + K4)
-            self.ys.append(yi)
+        vals = list(firstorder.rk4(self.f, ti, yi, t, h))
+        self.ys = [vals[i][0] for i in range(len(vals))]
+        self.ts = [vals[i][1] for i in range(len(vals))]
 
-            ti += h
-            self.ts.append(ti)
-
-        return yi
+        return self.ys[len(self.ys) - 1]
 
     def graph(self, *args, **kwargs):
         """
