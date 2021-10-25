@@ -4,6 +4,8 @@ from __future__ import division
 import matplotlib.pyplot as plt
 import numpy as np
 import ast
+import re
+import numexpr
 
 def str2def(eqn):
     """
@@ -25,7 +27,16 @@ def str2def(eqn):
         """
         To evaluate equation with varibles (t, y).
         """
-        return eval(eqn)
+
+        chk = list(eqn)
+        for idx in range(len(chk)):
+            if chk[idx] == 't':
+                chk[idx] = '% s' % t
+
+            elif chk[idx] == 'y':
+                chk[idx] = '% s' % y
+
+        return numexpr.evaluate(''.join([w for w in chk]))
 
     return f
 
