@@ -141,13 +141,14 @@ class GUI:
             self.ax.clear()
             self.ax.set_title('Solution graph')
             self.ax.scatter(self.ts[len(self.ts) - 1], self.ys[len(self.ys) - 1],
-                            facecolor='k', label=r'$ y({}) $'.format(self.t.get()))
+                            facecolor='k',
+                            label=r'$ y({}) = {:.4f}$'.format(self.t.get(), self.ys[len(self.ys) - 1]))
             self.ax.set_xlabel("$ t $")
             self.ax.set_ylabel("$ y(t) $", rotation='horizontal', fontsize='large')
             self.ax.plot(self.ts, self.ys, '--r', label='Solution curve')
             self.ax.legend()
             self.ax.grid()
-            
+
             self.canvas.draw()
             self.ts.clear()
             self.ys.clear()
