@@ -1,329 +1,197 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import division
-import matplotlib.pyplot as plt
 import numpy as np
-import ast
-import re
-import numexpr
+import sympy as sp
+import matplotlib.pyplot as plt
+from typing import Union, List, Tuple, Callable
 
-def str2def(eqn):
-    """
-    Make function <string> to <def> for format in RK4 iterations.
-
-    Example
-    -------
-    >>> fcn = '2 * t - 3 * y + 1'
-    >>> fcn = str2def(fcn)
-    >>> type(fcn)
-    function
-    >>>
-    """
-
-    if type(eqn) is not str:
-        raise ValueError('Input must be string' )
-
-    def f(t, y):
-        """
-        To evaluate equation with varibles (t, y).
-        """
-
-        chk = list(eqn)
-        for idx in range(len(chk)):
-            if chk[idx] == 't':
-                chk[idx] = '% s' % t
-
-            elif chk[idx] == 'y':
-                chk[idx] = '% s' % y
-
-        return numexpr.evaluate(''.join([w for w in chk]))
-
-    return f
-
-class firstorder:
+class RK4:
     """
     Implementation of the Runge Kutta 4th method, to obtain the value
-    of a first order differential equation given its initial conditions.
+    of a N-order differential equation given its initial conditions.
     -->  y' = f(t, y),   y(t0) = y0
 
     ...
 
     Attributes
     ----------
-    function : def
-        function of the differential equation to solve def f(t, y)
-
-    Methods
-    -------
-    solve(ti, yi, t, h):
-        Solve the ODE using RK4 and its initial values.
-
-    graph(*args, **kwargs):
-        Solution graph of each iteration.
-
-    graphvalues():
-        Return (t, y) values of each iteration.
-
-    Example
-    -------
-    >>> from RungeKutta.RK4 import firstorder
-    >>> def f(t, y):
-    ...     return 2 * t - 3 * y + 1
-    >>> y = firstorder(f)
-    >>> ti = 1
-    >>> yi = 5
-    >>> t = 1.5
-    >>> h = 0.01
-    >>> r = y.solve(ti, yi, t, h)
-    >>> print("dy/dt =", r)
-    >>> y.graph('r--', label = "Function y")
-
+    f : Callable
+        Compiled function of the differential equation system def f(t, y) -> np.ndarray
     """
 
-    def __init__(self, fcn):
+    def __init__(self, eqns: Union[str, List[str]]):
         """
         Constructor
 
         Parameters
         ----------
-        fcn : Function to solve f(t, y)
+        eqns : Union[str, List[str]]
+            Function(s) to solve f(t, y). Can be a single string or a list of strings.
         """
+        self.ts: List[float] = []
+        self.ys: List[np.ndarray] = []
+        
+        if isinstance(eqns, str):
+            eqns = [eqns]
 
-        self.ts = []
-        self.ys = []
-        if not callable(fcn) and type(fcn) is str:
-            self.f = str2def(fcn)
-        elif callable(fcn):
-            self.f = fcn
-        else:
-            raise ValueError("fcn is not <def> or <str>")
+        self.num_eqns = len(eqns)
+        
+        t_sym = sp.Symbol('t')
+        
+        import re
+        y_syms = [sp.Symbol(f'y_{i}') for i in range(self.num_eqns)]
+        
+        exprs = []
+        for original_eqn in eqns:
+            # Reemplazamos la notación y[i] por y_i para Sympy
+            eqn = re.sub(r'y\[(\d+)\]', r'y_\1', original_eqn)
+            if self.num_eqns == 1 and 'y_0' not in eqn and 'y' in eqn:
+                eqn = re.sub(r'\by\b', 'y_0', eqn)
+            
+            try:
+                # sympify compila de forma segura expresiones matemáticas
+                expr = sp.sympify(eqn, evaluate=False)
+            except Exception as e:
+                raise ValueError(f"Error de sintaxis en '{original_eqn}'. Revisa paréntesis y operadores. Detalle: {e}")
+            
+            # Validar que no haya símbolos extraños (letras que no sean t ni las y definidas)
+            allowed_syms = {'t'} | {f'y_{i}' for i in range(self.num_eqns)}
+            free_syms = {str(s) for s in expr.free_symbols}
+            
+            invalid_syms = free_syms - allowed_syms
+            if invalid_syms:
+                # Formatear el error para que sea claro para el usuario
+                invalid_str = ', '.join(invalid_syms).replace('y_', 'y[') + (']' if 'y_' in str(invalid_syms) else '')
+                raise ValueError(
+                    f"Símbolos desconocidos en '{original_eqn}': {invalid_str}\n"
+                    f"Solo se permiten 't' y variables de estado hasta y[{self.num_eqns - 1}]."
+                )
+                
+            exprs.append(expr)
+            
+        self._lambda_f = sp.lambdify((t_sym, *y_syms), exprs, "numpy")
+
+    def f(self, t: float, y: np.ndarray) -> np.ndarray:
+        """
+        Evaluates the differential equation system.
+        """
+        return np.array(self._lambda_f(t, *y))
 
     @staticmethod
-    def rk4(f, ti, yi, t, h):
+    def rk4(f: Callable[[float, np.ndarray], np.ndarray], ti: float, yi: np.ndarray, t: float, h: float):
         """
-        Runge-Kutta 4th Order Method for first order ODE
+        Runge-Kutta 4th Order Method for N-order ODE
 
         Parameters
         ----------
-        f : def
-            function of the differential equation to solve def f(t, y)
-        ti : Value of the initial t
-        yi : Value of the initial y
-        t : Value that you want to evaluate in the equation
-        h : Integration step
+        f : Callable
+            function of the differential equation to solve def f(t, y) -> np.ndarray
+        ti : float
+            Value of the initial t
+        yi : np.ndarray
+            Value of the initial y (vector)
+        t : float
+            Value that you want to evaluate in the equation
+        h : float
+            Integration step
 
-        Return
+        Yields
         ------
-        yi : list
-            List of "y" values of each iteration
-        ti : list
-            List of "t" values of each iteration
+        yi : np.ndarray
+            Value of "y" of each iteration
+        ti : float
+            Value of "t" of each iteration
         """
-
         for _ in np.arange(ti, t, h):
             k1 = f(ti, yi)
             k2 = f(ti + h / 2, yi + k1 * h / 2)
             k3 = f(ti + h / 2, yi + k2 * h / 2)
             k4 = f(ti + h, yi + k3 * h)
 
-            yi += (h / 6) * (k1 + 2 * (k2 + k3) + k4)
+            yi = yi + (h / 6) * (k1 + 2 * (k2 + k3) + k4)
             ti += h
 
             yield yi, ti
 
-    def solve(self, ti, yi, t, h=0.001):
+    def solve(self, ti: float, yi: Union[float, List[float], np.ndarray], t: float, h: float = 0.001) -> np.ndarray:
         """
-        Solution of the first-order ordinary differential equation
+        Solution of the ordinary differential equation
 
         Parameters
         ----------
-        ti : Value of the initial t
-        yi : Value of the initial y
-        t : Value that you want to evaluate in the equation
-        h : Integration step
+        ti : float
+            Value of the initial t
+        yi : Union[float, List[float], np.ndarray]
+            Value of the initial y
+        t : float
+            Value that you want to evaluate in the equation
+        h : float
+            Integration step
 
-        Return
-        ------
-        y : Value of "y" for "t" desired
+        Returns
+        -------
+        y : np.ndarray
+            Value of "y" vector for "t" desired
         """
-
         self.empty_vals()
+        
+        if not isinstance(yi, np.ndarray):
+            if isinstance(yi, (list, tuple)):
+                yi = np.array(yi, dtype=float)
+            else:
+                yi = np.array([yi], dtype=float)
 
-        vals = list(firstorder.rk4(self.f, ti, yi, t, h))
-        self.ys = [vals[i][0] for i in range(len(vals))]
-        self.ts = [vals[i][1] for i in range(len(vals))]
+        self.ts = [ti]
+        self.ys = [yi.copy()]
+        
+        for y_val, t_val in RK4.rk4(self.f, ti, yi, t, h):
+            self.ts.append(t_val)
+            self.ys.append(y_val.copy())
 
-        return self.ys[len(self.ys) - 1]
+        return self.ys[-1]
 
-    def graph(self, *args, **kwargs):
+    def graph(self, *args, **kwargs) -> None:
         """
         Solution Graph with values obtained from each iteration.
         """
-
         if len(self.ts) == 0 or len(self.ys) == 0:
             raise ValueError('Need to solve first')
 
+        ys_array = np.array(self.ys)
         plt.title("Solution graph")
-        plt.plot(self.ts, self.ys, *args, **kwargs)
-        plt.scatter(self.ts[len(self.ts) - 1], self.ys[len(self.ys) - 1],
-                    facecolor='k', s=50,
-                    label='y({})={}'.format(round(self.ts[len(self.ts) - 1], 4),
-                    self.ys[len(self.ys) - 1]))
+        
+        for i in range(ys_array.shape[1]):
+            plt.plot(self.ts, ys_array[:, i], label=f"$y_{i}(t)$", *args, **kwargs)
+            plt.scatter(self.ts[-1], ys_array[-1, i],
+                        facecolor='k', s=50,
+                        label=f'$y_{i}({round(self.ts[-1], 4)})={ys_array[-1, i]:.4f}$')
+            
         plt.xlabel("$ t $")
         plt.ylabel("$ y(t) $")
         plt.legend()
         plt.grid()
         plt.show()
 
-    def get_vals(self):
+    def get_vals(self) -> Tuple[List[float], List[np.ndarray]]:
         """
         Obtain the solution values of each iteration.
         """
-
         return self.ts, self.ys
 
-    def empty_vals(self):
+    def empty_vals(self) -> None:
         """
         Clear all values of each iteration.
         """
-
         self.ts = []
         self.ys = []
-
-class secondorder:
-    """
-    Implementation of the Runge Kutta 4th method, to obtain the value of a 2nd
-    order differential equation, given its initial conditions, obtain its graph.
-
-    Second Order ODE's in form:
-    --> y'' = f(t, y, y'), y(t0) = y0, y'(t0) = u0
-
-    It can be expressed as an initial value problem for a system of first-order
-    differential equations. If  y' = u, the second-order differential equation
-    becomes in the system:
-    y' = u
-    u' = f(t, y, u)
-
-    ...
-
-    Attributes
-    ----------
-    function1 : def
-        Function that depends to t, y, u, def f(t, y, u)
-    function2 : def
-        Function that depends to u, def g(u)
-
-    Methods
-    -------
-    def solve:
-        Solve the second-order differential equation using RK4
-    def graph:
-        Solution Graph with values obtained from each iteration.
-
-    Example
-    -------
-    y'' + ty' + y = 0, y(0) = 1, y'(0) = 2
-    First leave in terms of y' = u:
-        y' = u
-        u' + tu + y = 0
-        u' = - tu - y
-
-    >>> from RungeKutta.RK4 import secondorder
-    >>> def g(u):
-    ...     return u
-    >>> def f(t, y, u):
-    ...     return - t * u - y
-    >>> rk = secondorder(f, g)
-    >>> ti = 0.0
-    >>> yi = 1.0
-    >>> ui = 2.0
-    >>> t = 0.2
-    >>> h = 0.01
-    >>> y, u = rk.solve(ti, yi, ui, t, h)
-    >>> print('The values of y({}) = {} and y\'({}) = {}'.format(t, y, t, u))
-
-    """
-
-    def __init__(self, fcn1, fcn2):
-        """
-        Constructor
-
-        Parameters
-        ----------
-        fcn1 : Function that depends to t, y, u, def f(t, y, u)
-        fcn2 : Function that depends to u, def g(u)
-
-        """
-
-        self.f = fcn1
-        self.g = fcn2
-        self.ts = []
-        self.ys = []
-        self.us = []
-
-    def solve(self, ti, yi, ui, t, h=0.001):
-        """
-        Solution of the second-order ordinary differential equation
-
-        Parameters
-        ----------
-        ti : Value of the initial t
-        yi : Value of the initial y
-        ui : Value of the initial y'
-        t : Value that you want to evaluate in the diff system
-        h : Integration step
-
-        Returns
-        -------
-        yi : Value of y for the t desired
-        ui : Value of y' for the t desired
-        """
-
-        for _ in np.arange(ti, t, h):
-            m1 = self.g(ui)
-            k1 = self.f(ti, yi, ui)
-
-            m2 = self.g(ui + k1 * h / 2)
-            k2 = self.f(ti + h / 2, yi + m1 * h / 2, ui + k1 * h / 2)
-
-            m3 = self.g(ui + k2 * h / 2)
-            k3 = self.f(ti + h / 2, yi + m2 * h / 2, ui + k2 * h / 2)
-
-            m4 = self.g(ui + k3 * h)
-            k4 = self.f(ti + h, yi + m3 * h, ui + k3 * h)
-
-            yi += (h / 6) * (m1 + 2 * (m2 + m3) + m4)
-            self.ys.append(yi)
-
-            ui += (h / 6) * (k1 + 2 * (k2 + k3) + k4)
-            self.us.append(ui)
-
-            ti += h
-            self.ts.append(ti)
-
-        return yi, ui
-
-    def graph(self, *args, **kwargs):
-        """
-        Solution Graph with values obtained from each iteration.
-        """
-
-        plt.title("Graph of functions")
-        plt.plot(self.ts, self.ys, label="$y(t)$", *args, **kwargs)
-        plt.plot(self.ts, self.us, label="$y'(t)$", *args, **kwargs)
-        plt.legend()
-        plt.grid()
-        plt.xlabel("$ t $")
-        plt.ylabel("$ y \quad | \quad y'$")
-        plt.show()
 
 if __name__ == "__main__":
-    y = firstorder('2 * t - 3 * y + 1')
-
-    ti = 1.0
-    yi = 5.0
-    t = 1.5
-    h = 0.01
-    r = y.solve(ti, yi, t, h)
-    print("y({}) = {}".format(t, r))
-    y.graph('r--', label="Solution curve")
+    # Test 1st order
+    print("Testing 1st order...")
+    rk = RK4('2 * t - 3 * y + 1')
+    res = rk.solve(1.0, 5.0, 1.5, 0.01)
+    print("y(1.5) =", res)
+    
+    # Test 2nd order (y'' = -y) => y0' = y1, y1' = -y0
+    print("Testing 2nd order (Harmonic Oscillator)...")
+    rk2 = RK4(['y[1]', '-y[0]'])
+    res2 = rk2.solve(0.0, [0.0, 1.0], np.pi/2, 0.01)
+    print("y(pi/2) =", res2)
